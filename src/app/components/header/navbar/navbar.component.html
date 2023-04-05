@@ -1,1 +1,26 @@
-<p>navbar works!</p>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid d-flex">
+            <!-- loga AP -->
+            <a class="navbar-brand d-flex p-0 align-items-center" href="https://argentinaprograma.inti.gob.ar/" target="_bank">
+                <i class="fa-solid fa-terminal"></i>
+                <p class="textlogo text-white mb-0 d-none d-md-block">Argentina<br>Programa</p>
+            </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavBarCollapse" aria-controls="NavBarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i><!--<i class="fa-solid fa-xmark"></i>--></span>
+        </button>
+        <div class="collapse navbar-collapse" id="NavBarCollapse">
+            <!-- Navbar menu -->
+            <ul class="navbar-nav mx-auto menu">
+                <li><a class="nav-item nav-link active" href="/portafolio"><i class="fa-solid fa-house"></i>Inicio</a></li>
+                <li><a class="nav-item nav-link" href="#acercade"><i class="fa-solid fa-user"></i>Acerca de mí</a></li>
+                <li><a class="nav-item nav-link" href="#curriculum"><i class="fa-solid fa-file"></i>Curriculum</a></li>
+                <li><a class="nav-item nav-link" href="#habilidades"><i class="fa-solid fa-network-wired"></i>Habilidades</a></li>
+                <li><a class="nav-item nav-link" href="#proyectos"><i class="fa-solid fa-file-code"></i>Proyectos</a></li>
+                <li><a class="nav-item nav-link" href="#contacto"><i class="fa fa-envelope-open-text"></i>Contacto</a></li>
+            </ul>
+            <!-- Boton login -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Login<i class="fa-solid fa-user-lock icon-p"></i></button>
+        </div>
+    </div>
+</nav>

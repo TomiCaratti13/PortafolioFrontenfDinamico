@@ -1,0 +1,58 @@
+/* --- Datos & Intereses --- */
+.datos-intereses {
+    margin: 2rem;
+}
+.datos-intereses h3 {
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+    border-bottom: 0.1rem solid var(--themeBGColor);
+}
+.datos-intereses .datos {
+    margin-left: 2rem;
+}
+.datos-intereses .datos ul {
+    list-style: none;
+}
+.datos-intereses .datos ul li {
+    margin: 1.2rem 0;
+}
+.datos-intereses .datos ul li strong {
+    display: inline-block;
+    color: var(--themeBGColor);
+    width: 6rem;
+}
+.datos-intereses .datos ul li svg {
+    border-radius: 5px;
+    align-items: center;
+    margin: 0 0.4rem;
+}
+.datos-intereses .intereses {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.datos-intereses .intereses .interes {
+    width: 7.5rem;
+    height: 7.5rem;
+    background-color: var(--iconBGColor);
+    border-radius: 20px;
+    margin: 0 0.4rem 0.4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+}
+.datos-intereses .intereses .interes i {
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+.datos-intereses .intereses .interes img {
+    width: 2rem;
+    margin-bottom: 0.5rem;
+    filter: invert(100%)
+}
+.datos-intereses .intereses .interes:hover{
+    background-color: var(--themeBGColor);
+}

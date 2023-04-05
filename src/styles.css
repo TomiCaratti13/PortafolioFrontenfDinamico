@@ -36,23 +36,24 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* ----body---- */
 body {
-    background-color: var(--BGColor);
+    background-color: var(--BGColor) !important;
 }
+
 /* ----botón---- */
 .btn-primary {
-    --bs-btn-bg: var(--bg-btn-primary);
-    --bs-btn-border-color:var(--bg-btn-primary);
-    --bs-btn-hover-bg: var(--themeBGColor);
-    --bs-btn-hover-border-color:var(--themeBGColor);
-    --bs-btn-active-bg: var(--bg-btn-active);
-    --bs-btn-active-border-color: var(--bg-btn-active);
-    border-radius: 20px;
-    height: 2.5rem;
-    font-weight: 300;
-    font-size: 0.9rem;
-    align-items: center;
+    --bs-btn-bg: var(--bg-btn-primary) !important;
+    --bs-btn-border-color:var(--bg-btn-primary) !important;
+    --bs-btn-hover-bg: var(--themeBGColor) !important;
+    --bs-btn-hover-border-color:var(--themeBGColor) !important;
+    --bs-btn-active-bg: var(--bg-btn-active) !important;
+    --bs-btn-active-border-color: var(--bg-btn-active) !important;
+    border-radius: 20px !important;
+    height: 2.5rem !important;
+    font-weight: 300 !important;
+    font-size: 0.9rem !important;
+    align-items: center !important;
 }
 .icon-p {
-    padding-left: 0.5rem;
-    font-size: 1.2rem;
+    padding-left: 0.5rem !important;
+    font-size: 1.2rem !important;
 }
