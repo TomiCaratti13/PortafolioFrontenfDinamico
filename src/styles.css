@@ -47,8 +47,8 @@ body {
     --bs-btn-hover-border-color:var(--themeBGColor) !important;
     --bs-btn-active-bg: var(--bg-btn-active) !important;
     --bs-btn-active-border-color: var(--bg-btn-active) !important;
-    border-radius: 20px !important;
-    height: 2.5rem !important;
+    border-radius: 25px !important;
+    height: 2.4rem !important;
     font-weight: 300 !important;
     font-size: 0.9rem !important;
     align-items: center !important;

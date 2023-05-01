@@ -10,20 +10,20 @@ nav {
 /* -----logo AP----- */
 .navbar-brand i {
 display: inline-block;
-width: 2.7rem;
-height: 2.7rem;
+width: 2.6rem;
+height: 2.6rem;
 text-align: center;
-line-height: 2.6rem;
+line-height: 2.5rem;
 border-radius: 50%;
 background-color: var(--iconBGColor);
-font-size: 1.2rem;
+font-size: 1.25rem;
 transition: .3s;
 }
 .navbar-brand:hover i {
     background-color: var(--themeBGColor);
 }
 nav .navbar-brand p {
-    margin: 0 0.4rem;
+    margin: 0 0.3rem;
     font-size: 0.7rem;
     font-weight: 600;
 }

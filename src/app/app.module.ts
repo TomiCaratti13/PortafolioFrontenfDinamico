@@ -9,7 +9,6 @@ import { AcercadeComponent } from './components/acercade/acercade.component';
 import { InteresesComponent } from './components/intereses/intereses.component';
 import { CurriculumComponent } from './components/curriculum/curriculum.component';
 import { HabilidadesComponent } from './components/habilidades/habilidades.component';
-import { BotonesEdicionComponent } from './components/botones-edicion/botones-edicion.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -20,6 +19,16 @@ import { Page404Component } from './components/page404/page404.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { interceptorProvider } from './services/inter-service';
+import { ExperienciaComponent } from './components/curriculum/experiencia/experiencia.component';
+import { EducacionComponent } from './components/curriculum/educacion/educacion.component';
+import { ExpAddComponent } from './components/curriculum/experiencia/exp-add/exp-add.component';
+import { ExpEditComponent } from './components/curriculum/experiencia/exp-edit/exp-edit.component';
+import { ExpDeletComponent } from './components/curriculum/experiencia/exp-delet/exp-delet.component';
+import { EduAddComponent } from './components/curriculum/educacion/edu-add/edu-add.component';
+import { EduEditComponent } from './components/curriculum/educacion/edu-edit/edu-edit.component';
+import { EduDeletComponent } from './components/curriculum/educacion/edu-delet/edu-delet.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +39,6 @@ import { HttpClientModule } from '@angular/common/http';
     InteresesComponent,
     CurriculumComponent,
     HabilidadesComponent,
-    BotonesEdicionComponent,
     ContactoComponent,
     LoginComponent,
     RegisterComponent,
@@ -39,14 +47,25 @@ import { HttpClientModule } from '@angular/common/http';
     BannerComponent,
     Page404Component,
     FooterComponent,
-    LoadingComponent
+    LoadingComponent,
+    ExperienciaComponent,
+    EducacionComponent,
+    ExpAddComponent,
+    ExpEditComponent,
+    ExpDeletComponent,
+    EduAddComponent,
+    EduEditComponent,
+    EduDeletComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    interceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
