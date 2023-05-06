@@ -28,13 +28,4 @@ export class EducacionComponent implements OnInit{
     this.serEducacion.lista().subscribe(data => {this.edu = data});
   }
 
-  borrar(id?: number) {
-    if( id != undefined) {
-      this.serEducacion.delete(id).subscribe(data => {
-        this.cargarEducacion();
-      }, err => {
-        alert("No se pudo eliminar");
-      });
-    }
-  }
 }

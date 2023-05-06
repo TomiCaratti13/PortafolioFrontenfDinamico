@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class EduDeletComponent {
 
+
+  // borrar(id?: number) {
+  //   if( id != undefined) {
+  //     this.serEducacion.delete(id).subscribe(data => {
+  //       this.cargarEducacion();
+  //     }, err => {
+  //       alert("No se pudo eliminar");
+  //     });
+  //   }
+  // }
 }

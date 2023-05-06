@@ -1,24 +1,26 @@
-<div class="item exp">
+<div class="edit">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5">Agregar Experiencia</h1>
             </div>
             <div class="modal-body">
-                <form class="edit-exp">
-                    <label for="Cargo" class="form-label">Cargo</label>
-                    <input type="text" class="form-control" id="Cargo">
-                    <label for="Empresa" class="form-label">Empresa</label>
-                    <input type="text" class="form-control" id="Empresa">
-                    <label for="Fecha" class="form-label">Fecha</label>
-                    <input type="text" class="form-control" id="Fecha">
-                    <label for="Descripcion" class="form-label">Descripcion</label>
-                    <input type="text" class="form-control" id="Descripcion">
+                <form class="edit-exp" #f="ngForm" (ngSubmit)="onCreate()" novalidate>
+                    <label for="cargo" class="form-label">Cargo</label>
+                    <input type="text" class="form-control" id="cargo" name="cargoExp" [(ngModel)]="cargoExp" required>
+
+                    <label for="empresa" class="form-label">Empresa</label>
+                    <input type="text" class="form-control" id="empresa" name="empresaExp" [(ngModel)]="empresaExp" required>
+
+                    <label for="fecha" class="form-label">Fecha</label>
+                    <input type="text" class="form-control" id="fecha" name="fechaExp" [(ngModel)]="fechaExp" required>
+
+                    <label for="descripcionExp" class="form-label">Descripcion</label>
+                    <input type="text" class="form-control" id="descripcionExp" name="descripcionExp" [(ngModel)]="descripcionExp" required>
+                    <div class="modal-footer d-flex justify-content-around">
+                        <app-edicion></app-edicion>
+                    </div>
                 </form>
-            </div>
-            <div class="modal-footer d-flex justify-content-around">
-                <button type="submit" class="btn btn-secondary">Agregar</button>
-                <button type="submit" class="btn btn-danger">Cancelar</button>
             </div>
         </div>
     </div>

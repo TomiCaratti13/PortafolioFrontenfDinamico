@@ -7,17 +7,6 @@
     padding: 0 1.5rem;
     margin: 0.5rem;
 }
-.colum button {
-    text-transform: none;
-    border: none;
-    border-radius: 50%;
-    background-color: #00000000;
-    color: #fff;
-}
-.colum button i {
-    font-size: 1.4rem;
-    margin-top: 0.3rem;
-}
 .educacion {
     border-right: 0.2rem solid var(--iconBGColor);
 }
@@ -29,13 +18,7 @@
 }
 .item .editar{
     margin-top: -0.6rem;
-    margin-bottom: 0.5rem;
     margin-right: -0.8rem;
-}
-.item .editar i {
-    font-size: 1.1rem;
-    padding: 0rem 0.4rem;
-    font-weight: 100;
 }
 .item h4 {
     margin-bottom: 1.3rem;
@@ -67,10 +50,10 @@
 }
 .certifi i {
     display: inline-block;
-    width: 2rem;
-    height: 2rem;
+    width: 1.9rem;
+    height: 1.9rem;
     text-align: center;
-    line-height: 2.2rem;
+    line-height: 1.9rem;
     color: var(--iconColor);
     font-size: 1.5rem;
     margin: 0.5rem;

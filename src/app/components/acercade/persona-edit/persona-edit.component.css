@@ -1,0 +1,27 @@
+/* ----- Editar Persona ----- */
+.perfil {
+	width: 10rem;
+	height: 10rem;
+    border-radius: 50%;
+    /* border: 0.5rem solid var(--headerBGColor); */
+    position: relative;
+    /* background-image: linear-gradient(rgb(1, 0, 12, 0.2), rgba(1, 0, 12, 0.2)), url("../../../../assets/img/sinperfil.png"); */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.descripcion {
+	padding: 1rem;
+    flex-direction: column;
+}
+.image-upload {
+    border-radius: 20px;
+    border: 0.2rem solid var(--iconColor);
+}
+.image-upload input {
+    display: none;
+}
+.labelimg {
+    justify-content: center;
+    flex-direction: column;
+}

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AngularFireModule } from '@angular/fire/compat';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +30,7 @@ import { ExpDeletComponent } from './components/curriculum/experiencia/exp-delet
 import { EduAddComponent } from './components/curriculum/educacion/edu-add/edu-add.component';
 import { EduEditComponent } from './components/curriculum/educacion/edu-edit/edu-edit.component';
 import { EduDeletComponent } from './components/curriculum/educacion/edu-delet/edu-delet.component';
+import { environment } from 'src/environments/environment.development';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,8 @@ import { EduDeletComponent } from './components/curriculum/educacion/edu-delet/e
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [
     interceptorProvider
