@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenService } from 'src/app/services/token.service';
 import { Educacion } from 'src/app/model/educacion';
-import { SerEducacionService } from 'src/app/services/ser-educacion.service';
+import { EducacionService } from 'src/app/services/educacion.service';
 
 @Component({
   selector: 'app-educacion',
@@ -11,7 +11,10 @@ import { SerEducacionService } from 'src/app/services/ser-educacion.service';
 export class EducacionComponent implements OnInit{
   edu: Educacion[] = [];
 
-  constructor(private serEducacion: SerEducacionService, private tokenService: TokenService){}
+  ModoAdd: boolean = false;
+  ModoEdit: boolean = false;
+
+  constructor(private serEducacion: EducacionService, private tokenService: TokenService){}
 
   isLogged = false;
 
@@ -25,7 +28,9 @@ export class EducacionComponent implements OnInit{
   }
 
   cargarEducacion(): void {
-    this.serEducacion.lista().subscribe(data => {this.edu = data});
+    this.serEducacion.lista().subscribe(data => {
+      this.edu = data
+    });
   }
 
 }

@@ -57,3 +57,21 @@ body {
     padding-left: 0.5rem !important;
     font-size: 1.2rem !important;
 }
+.edicion i {
+    color: var(--iconColor);
+    font-size: 1.2rem;
+    font-weight: 100;
+    cursor: pointer;
+    text-align: center;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: 50%;
+    transition: .15s;
+}
+.edicion i:hover {
+    background-color: var(--themeBGColor);
+}
+.edicion i:active {
+    transform: scale(0.8);
+}

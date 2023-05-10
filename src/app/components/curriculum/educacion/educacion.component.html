@@ -1,14 +1,13 @@
 <div class="m-0 colum educacion">
     <h3 class="d-flex justify-content-between">Educacion
+        <!-- <app-boton-add *ngIf="isLogged"></app-boton-add> -->
         <app-boton-add></app-boton-add>
     </h3>
-    <!-- <app-edu-add></app-edu-add>
-    <app-edu-edit></app-edu-edit> -->
-    <div class="m-0 p-0" *ngFor="let Educacion of edu">
-    <!-- <div class="m-0 p-0" > -->
+    <app-edu-add *ngIf="!ModoAdd"></app-edu-add>
+    <app-edu-edit *ngIf="!ModoEdit"></app-edu-edit>
+    <!-- <div class="m-0 p-0" *ngFor="let Educacion of edu">
         <div class="item edu">
-            <!-- <div class="editar d-flex justify-content-end" *ngIf="isLogged"></div> -->
-            <div class="editar d-flex justify-content-end ">
+            <div class="editar d-flex justify-content-end" *ngIf="isLogged">
                 <app-boton-edit></app-boton-edit>
                 <app-boton-delet></app-boton-delet>
             </div>
@@ -19,41 +18,21 @@
             <span class="casa">{{ Educacion.instiEdu }}</span>
             <span class="fecha">{{ Educacion.fechaEdu }}</span>
             <p class="m-0 p-0">{{ Educacion.descripcionEdu }}</p>
-            <!-- <div class="d-flex justify-content-between position-relative">
-                <h4>Titulo</h4>
-                <button type="button" class="certifi position-absolute end-0 mt-3" data-bs-toggle="modal" data-bs-target="#certifi1Modal"><i class="fa-solid fa-address-card"></i></button>
-            </div>
-            <span class="casa">Institucion</span>
-            <span class="fecha">Fecha</span>
-            <p class="m-0 p-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea repellendus ipsa eum inventore beatae!</p> -->
         </div>
-<!--         
+    </div> -->
+    <div class="m-0 p-0">
         <div class="item edu">
-            <div class="editar d-flex justify-content-end ">
+            <div class="editar d-flex justify-content-end">
                 <app-boton-edit></app-boton-edit>
                 <app-boton-delet></app-boton-delet>
             </div>
             <div class="d-flex justify-content-between">
-                <h4>Titulo</h4>
-                <button type="button" class="certifi" data-bs-toggle="modal" data-bs-target="#certifi1Modal"><i class="fa-solid fa-address-card"></i></button>
+                <h4>titulo</h4>
+                <!-- <button type="button" class="certifi" data-bs-toggle="modal" data-bs-target="#certifi1Modal"><i class="fa-solid fa-address-card"></i></button> -->
             </div>
-            <span class="casa">Institucion</span>
-            <span class="fecha">Fecha</span>
-            <p class="m-0 p-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea repellendus ipsa eum inventore beatae!</p>
+            <span class="casa">institucion</span>
+            <span class="fecha">2019</span>
+            <p class="m-0 p-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga nam voluptates temporibus, sed consequuntur sapiente.</p>
         </div>
-
-        <div class="item edu">
-            <div class="editar d-flex justify-content-end ">
-                <app-boton-edit></app-boton-edit>
-                <app-boton-delet></app-boton-delet>
-            </div>
-            <div class="d-flex justify-content-between">
-                <h4>Titulo</h4>
-                <button type="button" class="certifi" data-bs-toggle="modal" data-bs-target="#certifi1Modal"><i class="fa-solid fa-address-card"></i></button>
-            </div>
-            <span class="casa">Institucion</span>
-            <span class="fecha">Fecha</span>
-            <p class="m-0 p-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea repellendus ipsa eum inventore beatae!</p>
-        </div> -->
     </div>
 </div>

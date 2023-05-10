@@ -1,7 +1,19 @@
 export const environment = {
-    production: false,
 
-    URL:'https://trcbackend.onrender.com/',
+  production: false,
+
+  URL: 'https://trcbackend.onrender.com/',
+  // URL: 'http://localhost:8080/',
+
+  firebase: {
+    projectId: 'tomascaratti-portafolio',
+    appId: '1:993111845027:web:b4a3481ff03b75a4d9f716',
+    storageBucket: 'tomascaratti-portafolio.appspot.com',
+    locationId: 'southamerica-east1',
+    apiKey: 'AIzaSyDOjFzJpSU3KYC9FP94yailV0SIBcdmYNY',
+    authDomain: 'tomascaratti-portafolio.firebaseapp.com',
+    messagingSenderId: '993111845027',
+  },
 
     firebaseConfig:{
         apikey: "AIzaSyDxWe6ruTi5HKdli7osFGWrACOGY12mFWs",

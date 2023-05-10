@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class EduAddComponent {
 
+  tituloEdu: string = "";
+  instiEdu: string = "";
+  fechaEdu: string = "";
+  descripcionEdu: string = "";
+
+  Crear(): void {
+  }
 }

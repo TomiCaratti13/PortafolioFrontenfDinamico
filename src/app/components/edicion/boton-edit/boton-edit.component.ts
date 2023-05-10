@@ -6,10 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./boton-edit.component.css']
 })
 export class BotonEditComponent {
-
-  isLogged = true;
-
-  onEdit(): void{
-
-  }
 }

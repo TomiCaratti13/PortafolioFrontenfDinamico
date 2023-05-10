@@ -6,10 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./boton-delet.component.css']
 })
 export class BotonDeletComponent {
-
-  isLogged = true;
-
-  onDelet(): void{
-
-  }
+  
 }

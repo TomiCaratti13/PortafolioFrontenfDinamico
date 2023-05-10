@@ -1,7 +1,7 @@
 <!-- AcercaDe -->
 <section id="acercade" class="acerca-de">
     <!-- Perfil -->
-    <app-persona *ngIf="!true"></app-persona>
+    <app-persona *ngIf="!ModoEdit"></app-persona>
     <!-- Editar Persona -->
-    <app-persona-edit></app-persona-edit>
+    <app-persona-edit *ngIf="!ModoEdit"></app-persona-edit>
 </section>

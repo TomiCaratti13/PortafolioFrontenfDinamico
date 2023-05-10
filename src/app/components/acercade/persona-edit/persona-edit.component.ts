@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Persona } from 'src/app/model/persona.model';
 import { ImagenesService } from 'src/app/services/imagenes.service';
 import { PersonaService } from 'src/app/services/persona.service';
@@ -13,25 +13,26 @@ export class PersonaEditComponent implements OnInit{
   persona: Persona = new Persona("","","","","","");
 
   constructor (private serPersona: PersonaService, private activatedRouted: ActivatedRoute,
-              public imgService: ImagenesService) {}
+    public imgService: ImagenesService, private router: Router) {}
 
   ngOnInit(): void {
     const id = this.activatedRouted.snapshot.params['id'];
-    this.serPersona.detail(id).subscribe(
-      data =>{
+    this.serPersona.detail(id).subscribe(data => {
         this.persona = data
-      }, err => {
-      alert("Error al editar")
-      }
-    );
+    }, err => {
+      alert("Error")
+    });
   }
 
   editar(): void {
     const id = this.activatedRouted.snapshot.params['id'];
+    this.persona.imgPerfil = this.imgService.url;
     this.serPersona.update(id, this.persona).subscribe(data =>{
-      alert("Editado correctamente")
+      alert("Editado correctamente");
+      this.router.navigate(['']);
     }, err => {
-      alert("Erroral editar")
+      alert("Error al editar persona");
+      this.router.navigate(['']);
     });
   }
 

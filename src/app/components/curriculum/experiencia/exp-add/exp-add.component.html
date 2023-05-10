@@ -1,23 +1,32 @@
-<div class="edit">
+<div class="add">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5">Agregar Experiencia</h1>
+                <h1 class="modal-title fs-5">Añadir Experiencia</h1>
             </div>
             <div class="modal-body">
-                <form class="edit-exp" #f="ngForm" (ngSubmit)="onCreate()" novalidate>
-                    <label for="cargo" class="form-label">Cargo</label>
-                    <input type="text" class="form-control" id="cargo" name="cargoExp" [(ngModel)]="cargoExp" required>
-
-                    <label for="empresa" class="form-label">Empresa</label>
-                    <input type="text" class="form-control" id="empresa" name="empresaExp" [(ngModel)]="empresaExp" required>
-
-                    <label for="fecha" class="form-label">Fecha</label>
-                    <input type="text" class="form-control" id="fecha" name="fechaExp" [(ngModel)]="fechaExp" required>
-
-                    <label for="descripcionExp" class="form-label">Descripcion</label>
-                    <input type="text" class="form-control" id="descripcionExp" name="descripcionExp" [(ngModel)]="descripcionExp" required>
-                    <div class="modal-footer d-flex justify-content-around">
+                <form class="add-exp" #f="ngForm" (ngSubmit)="Crear()" novalidate>
+                    <label for="cargoEx" class="form-label">Cargo</label>
+                    <input type="text" class="form-control" [class]="{'is-invalid': cargoEx.errors && (cargoEx.dirty || cargoEx.touched)}" id="cargoEx" name="cargoEx" [(ngModel)]="cargoExp" required #cargoEx="ngModel" autocomplete="off">
+                        <div *ngIf="cargoEx.errors?.['required']" class="text-danger">
+                            <p class="m-0">El cargo es obligatorio</p>
+                        </div>
+                    <label for="empresaEx" class="form-label">Empresa</label>
+                    <input type="text" class="form-control" [class]="{'is-invalid': empresaEx.errors && (empresaEx.dirty || empresaEx.touched)}" id="empresaEx" name="empresaEx" [(ngModel)]="empresaExp" required #empresaEx="ngModel" autocomplete="off">
+                        <div *ngIf="empresaEx.errors?.['required']" class="text-danger">
+                            <p class="m-0">La empresa es obligatoria</p>
+                        </div>
+                    <label for="fechaEx" class="form-label">Fecha</label>
+                    <input type="text" class="form-control" [class]="{'is-invalid': fechaEx.errors && (fechaEx.dirty || fechaEx.touched)}" id="fechaEx" name="fechaEx" [(ngModel)]="fechaExp" required #fechaEx="ngModel" autocomplete="off">
+                        <div *ngIf="fechaEx.errors?.['required']" class="text-danger">
+                            <p class="m-0">La fecha es obligatoria</p>
+                        </div>
+                    <label for="descripcionEx" class="form-label">Descripcion</label>
+                    <textarea class="form-control" [class]="{'is-invalid': descripcionEx.errors && (descripcionEx.dirty || descripcionEx.touched)}" id="descripcionEx" name="descripcionEx" cols="50" rows="2" [(ngModel)]="descripcionExp" required #descripcionEx="ngModel" autocomplete="off"></textarea>
+                        <div *ngIf="descripcionEx.errors?.['required']" class="text-danger">
+                            <p class="m-0">La descripcion es obligatoria</p>
+                        </div>
+                    <div class="modal-footer d-flex justify-content-around mt-2">
                         <app-edicion></app-edicion>
                     </div>
                 </form>
@@ -25,3 +34,5 @@
         </div>
     </div>
 </div>
+
+

@@ -1,47 +1,32 @@
 <div class="m-0 colum experiencia">
     <h3 class="d-flex justify-content-between">Experiencia
+        <!-- <app-boton-add *ngIf="isLogged"></app-boton-add> -->
         <app-boton-add></app-boton-add>
     </h3>
-    <app-exp-add></app-exp-add>
-    <app-exp-edit></app-exp-edit>
-        <!-- <div class="m-0 p-0" *ngFor="let Experiencia of exp"> -->
-    <div class="m-0 p-0" >
+    <app-exp-add *ngIf="!ModoAdd"></app-exp-add>
+    <app-exp-edit *ngIf="!ModoEdit"></app-exp-edit>
+    <!-- <div class="m-0 p-0" *ngFor="let Experiencia of exp">
         <div class="item exp">
-            <!-- <div class="editar d-flex justify-content-end" *ngIf="isLogged"> -->
-            <div class="editar d-flex justify-content-end ">
+            <div class="editar d-flex justify-content-end" *ngIf="isLogged">
                 <app-boton-edit></app-boton-edit>
                 <app-boton-delet></app-boton-delet>
             </div>
-            <!-- <h4>{{ Experiencia.cargoExp }}</h4> -->
-            <!-- <span class="casa">{{ Experiencia.empresaExp }}</span>
+            <h4>{{ Experiencia.cargoExp }}</h4>
+            <span class="casa">{{ Experiencia.empresaExp }}</span>
             <span class="fecha">{{ Experiencia.fechaExp }}</span>
-            <p class="m-0 p-0">{{ Experiencia.descripcionExp }}</p> -->
-            <h4>Cargo</h4>
-            <span class="casa">Empresa</span>
-            <span class="fecha">Fecha</span>
-            <p class="m-0 p-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id animi recusandae laudantium laboriosam tenetur?</p>
+            <p class="m-0 p-0">{{ Experiencia.descripcionExp }}</p>
         </div>
-
+    </div> -->
+    <div class="m-0 p-0">
         <div class="item exp">
-            <div class="editar d-flex justify-content-end ">
+            <div class="editar d-flex justify-content-end">
                 <app-boton-edit></app-boton-edit>
                 <app-boton-delet></app-boton-delet>
             </div>
-            <h4>Cargo</h4>
-            <span class="casa">Empresa</span>
-            <span class="fecha">Fecha</span>
-            <p class="m-0 p-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id animi recusandae laudantium laboriosam tenetur?</p>
-        </div>
-
-        <div class="item exp">
-            <div class="editar d-flex justify-content-end ">
-                <app-boton-edit></app-boton-edit>
-                <app-boton-delet></app-boton-delet>
-            </div>
-            <h4>Cargo</h4>
-            <span class="casa">Empresa</span>
-            <span class="fecha">Fecha</span>
-            <p class="m-0 p-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id animi recusandae laudantium laboriosam tenetur?</p>
+            <h4>cargo</h4>
+            <span class="casa">empresa</span>
+            <span class="fecha">2023</span>
+            <p class="m-0 p-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic consequatur ratione quasi, itaque esse necessitatibus.</p>
         </div>
     </div>
 </div>

@@ -1,0 +1,31 @@
+<div class="hab">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Editar habilidad</h1>
+            </div>
+            <div class="modal-body">
+                    <form class="add-exp" #f="ngForm" (ngSubmit)="Crear()" novalidate>
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control"
+                            [class]="{'is-invalid': nombre.errors && (nombre.dirty || nombre.touched)}" id="cargoEx"
+                            name="nombre" [(ngModel)]="nombreHys" required #nombre="ngModel" autocomplete="off">
+                        <div *ngIf="nombre.errors?.['required']" class="text-danger">
+                            <p class="m-0">El cargo es obligatorio</p>
+                        </div>
+                        <label for="porcenHab" class="form-label">Porcentaje</label>
+                        <input type="text" class="form-control"
+                            [class]="{'is-invalid': porcenHab.errors && (porcenHab.dirty || porcenHab.touched)}"
+                            id="porcenHab" name="porcenHab" [(ngModel)]="porcentaje" required #porcenHab="ngModel"
+                            autocomplete="off">
+                        <div *ngIf="porcenHab.errors?.['required']" class="text-danger">
+                            <p class="m-0">La empresa es obligatoria</p>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-around mt-2">
+                            <app-edicion></app-edicion>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>

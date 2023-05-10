@@ -1,11 +1,10 @@
 <!-- <div *ngIf="persona"> -->
 <div>
     <form action="" #f="ngForm" (ngSubmit)="editar()" class="row m-0 p-0 container-fluid text-white justify-content-center">
-    <!-- <form action="" #f="ngForm" class="row m-0 p-0 container-fluid text-white justify-content-center"> -->
         <div class="col-lg-6">
             <div class="image-upload d-sm-flex text-sm-start justify-content-center mt-2 mb-2 mx-sm-5 p-2">
             <!-- <div> -->
-                <img src="../../../../assets/img/sinperfil.png" alt="avatar" class="perfil mx-sm-3" id="img" />
+                <img [src]="imgService.url" alt="Perfil" class="perfil mx-sm-3" id="img" />
                 <div class="d-sm-flex mt-1 mb-1 mx-sm-4 labelimg text-sm-start">
                     <label for="foto">Foto
                         <span class="btn btn-light w-100">Cambiar</span>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Experiencia } from 'src/app/model/experiencia';
-import { SerExperienciaService } from 'src/app/services/ser-experiencia.service';
+import { ExperienciaService } from 'src/app/services/experiencia.service';
 import { TokenService } from 'src/app/services/token.service';
 
 @Component({
@@ -11,7 +11,10 @@ import { TokenService } from 'src/app/services/token.service';
 export class ExperienciaComponent implements OnInit{
   exp: Experiencia[] = [];
 
-  constructor(private serExperiencia: SerExperienciaService, private tokenService: TokenService){}
+  ModoAdd: boolean = false;
+  ModoEdit: boolean = false;
+
+  constructor(private serExperiencia: ExperienciaService , private tokenService: TokenService){}
 
   isLogged = false;
 
@@ -25,7 +28,9 @@ export class ExperienciaComponent implements OnInit{
   }
 
   cargarExperiencia(): void {
-    this.serExperiencia.lista().subscribe(data => {this.exp = data});
+    this.serExperiencia.lista().subscribe(data => {
+      this.exp = data
+    });
   }
 
 }

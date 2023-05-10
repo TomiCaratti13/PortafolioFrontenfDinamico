@@ -1,5 +1,6 @@
 
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Persona } from 'src/app/model/persona.model';
 import { PersonaService } from 'src/app/services/persona.service';
 import { TokenService } from 'src/app/services/token.service';
@@ -12,7 +13,7 @@ import { TokenService } from 'src/app/services/token.service';
 export class PersonaComponent implements OnInit{
   persona: Persona = new Persona("","","","","","");
 
-  constructor(public personaService: PersonaService, private tokenService: TokenService){}
+  constructor(public personaService: PersonaService, private tokenService: TokenService, private router: Router){}
 
   isLogged = false;
 
@@ -30,5 +31,4 @@ export class PersonaComponent implements OnInit{
       this.persona = data
     });
   }
-
 }

@@ -1,0 +1,18 @@
+.hab {
+    padding: 1rem;
+}
+.hab {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    background-color: var(--iconBGColor);
+}
+.hab span{
+    margin-bottom: 0.6rem;
+    align-items: center;
+}
+.hab span h5{
+    margin: 0;
+    font-weight: 400;
+    transition: .3s;
+}

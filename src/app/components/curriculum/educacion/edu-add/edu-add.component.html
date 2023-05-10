@@ -1,30 +1,35 @@
-<div class="item edu">
+<div class="add">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5">Agregar Educacion</h1>
+                <h1 class="modal-title fs-5">Añadir Educacion</h1>
             </div>
             <div class="modal-body">
-                <form class="edit-edu">
-                    <label for="Titulo" class="form-label">Titulo</label>
-                    <input type="text" class="form-control" id="Titulo">
-
-                    <label for="Institucion" class="form-label">Institucion</label>
-                    <input type="text" class="form-control" id="Institucion">
-
-                    <label for="Fecha" class="form-label">Fecha</label>
-                    <input type="text" class="form-control" id="Fecha">
-
-                    <label for="Descripcion" class="form-label">Descripcion</label>
-                    <input type="text" class="form-control" id="Descripcion">
-
-                    <label for="imagen" class="form-label">Imagen</label>
-                    <input type="file" class="form-control" id="imagen" accept=".jpg, .png, .jpeg">
+                <form class="add-edu" #f="ngForm" (ngSubmit)="Crear()" novalidate>
+                    <label for="tituloEd" class="form-label">Título</label>
+                    <input type="text" class="form-control" [class]="{'is-invalid': tituloEd.errors && (tituloEd.dirty || tituloEd.touched)}" id="tituloEd" name="tituloEd" [(ngModel)]="tituloEdu" required #tituloEd="ngModel" autocomplete="off">
+                        <div *ngIf="tituloEd.errors?.['required']" class="text-danger">
+                            <p class="m-0">El título es obligatorio</p>
+                        </div>
+                    <label for="instiEd" class="form-label">Institución</label>
+                    <input type="text" class="form-control" [class]="{'is-invalid': instiEd.errors && (instiEd.dirty || instiEd.touched)}" id="instiEd" name="instiEd" [(ngModel)]="instiEdu" required #instiEd="ngModel" autocomplete="off">
+                        <div *ngIf="instiEd.errors?.['required']" class="text-danger">
+                            <p class="m-0">La institución es obligatoria</p>
+                        </div>
+                    <label for="fechaEd" class="form-label">Fecha</label>
+                    <input type="text" class="form-control" [class]="{'is-invalid': fechaEd.errors && (fechaEd.dirty || fechaEd.touched)}" id="fechaEd" name="fechaEd" [(ngModel)]="fechaEdu" required #fechaEd="ngModel" autocomplete="off">
+                        <div *ngIf="fechaEd.errors?.['required']" class="text-danger">
+                            <p class="m-0">La fecha es obligatoria</p>
+                        </div>
+                        <label for="descripcionEd" class="form-label">Descripcion</label>
+                        <textarea class="form-control" [class]="{'is-invalid': descripcionEd.errors && (descripcionEd.dirty || descripcionEd.touched)}" id="descripcionEd" name="descripcionEd" cols="50" rows="2" [(ngModel)]="descripcionEdu" required #descripcionEd="ngModel" autocomplete="off"></textarea>
+                            <div *ngIf="descripcionEd.errors?.['required']" class="text-danger">
+                                <p class="m-0">La descripcion es obligatoria</p>
+                            </div>
+                    <div class="modal-footer d-flex justify-content-around mt-2">
+                        <app-edicion></app-edicion>
+                    </div>
                 </form>
-            </div>
-            <div class="modal-footer d-flex justify-content-around">
-                <button type="submit" class="btn btn-secondary">Agregar</button>
-                <button class="btn btn-danger">Cancelar</button>
             </div>
         </div>
     </div>
