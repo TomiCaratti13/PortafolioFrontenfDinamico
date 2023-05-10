@@ -1,4 +1,4 @@
-/* --- Proyectos --- */
+/* --- Proyectos Modo Vista--- */
 .proyectos {
     margin: 2rem;
     border-bottom: 0.1rem solid var(--themeBGColor);
@@ -27,7 +27,7 @@
 }
 .proyectos .proyecto .tarjeta .tar-head {
     width: 100%;
-    height: 17rem;
+    height: 20rem;
     padding: 0.5rem;
     border-radius: 20px;
     background: var(--BGColor);
@@ -47,7 +47,7 @@
 }
 .proyectos .proyecto .tarjeta .tar-head .head-img img {
     width: 100%;
-    height: 12rem;
+    height: 15rem;
     border-radius: 20px;
 }
 .proyectos .proyecto .tarjeta .tar-head .head-proy{
@@ -59,9 +59,9 @@
 .proyectos .proyecto .tarjeta .tar-head .head-proy i {
     display: inline-block;
     text-align: center;
-    width: 2.7rem;
-    height: 2.7rem;
-    line-height: 2.8rem;
+    width: 2.6rem;
+    height: 2.6rem;
+    line-height: 2.7rem;
     font-size: 1.7rem;
     border-radius: 50%;
     margin-right: 1rem;
@@ -120,6 +120,77 @@
     text-decoration: none;
 }
 .proyectos .proyecto .tarjeta .tar-body .repo-live a i {
+    display: inline-block;
+    text-align: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    line-height: 1.9rem;
+    font-size: 1.1rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+    background-color: var(--iconBGColor);
+}
+
+/* --- Proyectos Modo Edicion--- */
+.proyectos .proyecto .tarjeta .tar-head-edit {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 20px;
+    background: var(--BGColor);
+    justify-content: center;
+    align-items: center;
+    background: var(--iconBGColor);
+}
+.proyectos .proyecto .tarjeta .tar-head-edit .head-img-edit img {
+    width: 100%;
+    height: 15rem;
+    margin-top: 0.2rem;
+    border-radius: 20px;
+}
+.proyectos .proyecto .tarjeta .tar-head .head-proy-edit{
+    display: flex;
+    padding-top: 0.5rem;
+    padding-bottom: 0;
+    align-items: center;
+}
+.proyectos .proyecto .tarjeta .tar-head-edit .head-proy-edit h4 {
+    padding: 0;
+    margin-bottom: 0.2rem;
+    font-weight: 500;
+}
+.proyectos .proyecto .tarjeta .tar-head-edit .head-proy-edit h6 {
+    padding: 0;
+    margin: 0;
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: var(--themeBGColor);
+}
+.proyectos .proyecto .tarjeta .tar-body-edit {
+    width: 100%;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background: var(--iconBGColor);
+    padding: 0 1rem;
+    transition: all .3s cubic-bezier(0.2,0,0,1);
+}
+.proyectos .proyecto .tarjeta .tar-body-edit .repo-live-edit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.proyectos .proyecto .tarjeta .tar-body-edit .repo-live-edit a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem;
+    margin: 0.3rem;
+    border-radius: 20px;
+    color: var(--iconColor);
+    background-color: var(--bg-btn-primary);
+    text-decoration: none;
+}
+.proyectos .proyecto .tarjeta .tar-body-edit .repo-live-edit a i {
     display: inline-block;
     text-align: center;
     width: 1.8rem;

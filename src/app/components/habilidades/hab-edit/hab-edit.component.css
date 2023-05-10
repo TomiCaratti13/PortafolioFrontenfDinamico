@@ -1,18 +1,11 @@
-.hab {
-    padding: 1rem;
-}
-.hab {
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border-radius: 10px;
+.edit {
+    padding: 1.2rem;
+    margin-bottom: 2rem;
+    border-radius: 20px;
     background-color: var(--iconBGColor);
 }
-.hab span{
-    margin-bottom: 0.6rem;
-    align-items: center;
-}
-.hab span h5{
-    margin: 0;
-    font-weight: 400;
-    transition: .3s;
+.edit .form-label {
+    color: var(--themeBGColor) !important;
+    margin: 0.2rem 0 !important;
+    font-weight: 600 !important;
 }

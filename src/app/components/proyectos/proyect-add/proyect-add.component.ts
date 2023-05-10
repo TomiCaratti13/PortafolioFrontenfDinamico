@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class ProyectAddComponent {
 
+  nombrePro: string = "";
+  autorPro: string = "";
+  descripcionPro: string = "";
+  imgPro: string = "";
+  urlLive: string = "";
+  urlRepo: string = "";
+
+  Crear(): void {
+  }
 }
