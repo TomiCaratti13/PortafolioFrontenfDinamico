@@ -10,21 +10,22 @@ import { PersonaService } from 'src/app/services/persona.service';
   styleUrls: ['./persona-edit.component.css']
 })
 export class PersonaEditComponent implements OnInit{
-  persona: Persona = new Persona("","","","","","");
+  persona: Persona = null;
 
   constructor (private serPersona: PersonaService, private activatedRouted: ActivatedRoute,
     public imgService: ImagenesService, private router: Router) {}
 
-  ngOnInit(): void {
-    const id = this.activatedRouted.snapshot.params['id'];
-    this.serPersona.detail(id).subscribe(data => {
+    ngOnInit(): void {
+      const id = this.activatedRouted.snapshot.params['id'];
+      this.serPersona.detail(id).subscribe(data => {
         this.persona = data
-    }, err => {
-      alert("Error")
-    });
-  }
+      }, err => {
+        alert("Error");
+        this.router.navigate(['']);
+      });
+    }
 
-  editar(): void {
+  Editar(): void {
     const id = this.activatedRouted.snapshot.params['id'];
     this.persona.imgPerfil = this.imgService.url;
     this.serPersona.update(id, this.persona).subscribe(data =>{

@@ -10,9 +10,16 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-.descripcion {
-	padding: 1rem;
-    flex-direction: column;
+.edit {
+    padding: 1.2rem;
+    margin-bottom: 2rem;
+    border-radius: 20px;
+    background-color: var(--iconBGColor);
+}
+.edit .form-label {
+    color: var(--themeBGColor) !important;
+    margin: 0.2rem 0 !important;
+    font-weight: 600 !important;
 }
 .image-upload {
     border-radius: 20px;

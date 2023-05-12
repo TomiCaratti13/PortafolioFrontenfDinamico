@@ -53,9 +53,18 @@ body {
     font-size: 0.9rem !important;
     align-items: center !important;
 }
+.btn:disabled, .btn.disabled, fieldset:disabled .btn {
+    background-color: var(--themeBGColor) !important;
+    border-color: var(--themeBGColor) !important;
+}
 .icon-p {
     padding-left: 0.5rem !important;
     font-size: 1.2rem !important;
+}
+.edicion {
+    border: none;
+    border-radius: 50%;
+    background-color: #00000000;
 }
 .edicion i {
     color: var(--iconColor);
@@ -75,3 +84,9 @@ body {
 .edicion i:active {
     transform: scale(0.8);
 }
+.add i{    
+    font-weight: 700 !important;
+    font-size: 1.4rem !important;
+    line-height: 2.05rem !important;
+}
+

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ScrollSpyModule } from 'ngx-scrollspy';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
@@ -21,22 +23,14 @@ import { ExperienciaComponent } from './components/curriculum/experiencia/experi
 import { EducacionComponent } from './components/curriculum/educacion/educacion.component';
 import { ExpAddComponent } from './components/curriculum/experiencia/exp-add/exp-add.component';
 import { ExpEditComponent } from './components/curriculum/experiencia/exp-edit/exp-edit.component';
-import { ExpDeletComponent } from './components/curriculum/experiencia/exp-delet/exp-delet.component';
 import { EduAddComponent } from './components/curriculum/educacion/edu-add/edu-add.component';
 import { EduEditComponent } from './components/curriculum/educacion/edu-edit/edu-edit.component';
-import { EduDeletComponent } from './components/curriculum/educacion/edu-delet/edu-delet.component';
-import { EdicionComponent } from './components/edicion/edicion.component';
-import { BotonAddComponent } from './components/edicion/boton-add/boton-add.component';
-import { BotonDeletComponent } from './components/edicion/boton-delet/boton-delet.component';
-import { BotonEditComponent } from './components/edicion/boton-edit/boton-edit.component';
 import { PersonaComponent } from './components/acercade/persona/persona.component';
 import { PersonaEditComponent } from './components/acercade/persona-edit/persona-edit.component';
 import { HabEditComponent } from './components/habilidades/hab-edit/hab-edit.component';
-import { HabDeletComponent } from './components/habilidades/hab-delet/hab-delet.component';
 import { HabAddComponent } from './components/habilidades/hab-add/hab-add.component';
 import { HabHysComponent } from './components/habilidades/hab-hys.component';
 import { ProyectAddComponent } from './components/proyectos/proyect-add/proyect-add.component';
-import { ProyectDeletComponent } from './components/proyectos/proyect-delet/proyect-delet.component';
 import { ProyectEditComponent } from './components/proyectos/proyect-edit/proyect-edit.component';
 
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -47,13 +41,11 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
   declarations: [
     AppComponent, NavbarComponent, HeaderComponent, AcercadeComponent,CurriculumComponent, LoginComponent,
     ProyectosComponent, PortafolioComponent, BannerComponent,FooterComponent, ExperienciaComponent,
-    EducacionComponent, ExpAddComponent, ExpEditComponent, ExpDeletComponent, EduAddComponent, EduEditComponent,
-    EduDeletComponent, EdicionComponent, BotonAddComponent, BotonDeletComponent, BotonEditComponent,
-    PersonaComponent, PersonaEditComponent, HabEditComponent, HabDeletComponent, HabAddComponent, HabHysComponent,
-    ProyectAddComponent, ProyectDeletComponent, ProyectEditComponent
+    EducacionComponent, ExpAddComponent, ExpEditComponent, EduAddComponent, EduEditComponent, PersonaComponent, PersonaEditComponent, HabEditComponent,
+    HabAddComponent, HabHysComponent, ProyectAddComponent, ProyectEditComponent
   ],
   imports: [
-    BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,
+    BrowserModule, ScrollSpyModule.forRoot(), BrowserAnimationsModule, AppRoutingModule, HttpClientModule, FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage())

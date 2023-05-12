@@ -2,57 +2,64 @@
 <section id="proyectos" class="proyectos">
     <div class="row m-0 p-0 container-fluid justify-content-center text-white">
         <h2 class="text-center">Proyectos
-            <app-boton-add class="position-absolute end-0 mx-5"></app-boton-add>
+            <!-- <app-boton-add class="position-absolute end-0 mx-5"></app-boton-add> -->
+            <button class="edicion add position-absolute end-0 mx-5" *ngIf="isLogged"><i class="fa-solid fa-circle-plus"></i></button>
         </h2>
         <div class="proyecto">
-            <div class="col-lg-5 col-md-5 col-sm-8 m-2">
-                <app-proyect-add></app-proyect-add>
-            </div>
-            <div class="col-lg-5 col-md-5 col-sm-8 m-2">
-                <app-proyect-edit></app-proyect-edit>
-            </div>
+            <!-- <div class="col-lg-5 col-md-5 col-sm-8 m-2"><app-proyect-add></app-proyect-add></div><div class="col-lg-5 col-md-5 col-sm-8 m-2"><app-proyect-edit></app-proyect-edit></div> -->
+
             <!-- Modo Edicion -->
-            <div class="col-lg-5 col-md-5 col-sm-8 tarjeta" *ngIf="!false">
-                <div class="tar-head-edit">
-                    <div class="editar d-flex justify-content-end">
-                        <app-boton-edit></app-boton-edit>
-                        <app-boton-delet></app-boton-delet>
-                    </div>
-                    <div class="head-img-edit">
-                        <img src="../../../assets/img/portafolio.jpg" alt="portafolioweb">
-                    </div>
-                    <div class="head-proy-edit mt-1 mb-3 mx-3">
-                        <h4>Proyecto</h4>
-                        <h6>Tomás Caratti</h6>
-                    </div>
-                    <div class="tar-body-edit">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente, odit aspernatur quod natus quaerat exercitationem.</p>
-                        <div class="repo-live-edit d-flex">
-                            <a href="#" target="_bank"><i class="fa-solid fa-up-right-from-square"></i>LIVE DEMO</a>
-                            <a href="#" target="_bank"><i class="fa-brands fa-github"></i>REPOSITORIO</a>                                
+            <div *ngIf="isLogged">
+                <div class="m-0 p-0" *ngFor="let Proyecto of proyect">
+                    <div class="col-lg-5 col-md-5 col-sm-8 tarjeta">
+                        <div class="tar-head-edit">
+                            <div class="editar d-flex justify-content-end">
+                                <!-- <app-boton-edit></app-boton-edit><app-boton-delet></app-boton-delet> -->
+                                <button class="edicion"><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button class="edicion"><i class="fa-solid fa-trash-can"></i></button>
+                            </div>
+                            <div class="head-img-edit">
+                                <img [src]="Proyecto.imgPro" alt="portafolioweb">
+                            </div>
+                            <div class="head-proy-edit mt-1 mb-3 mx-3">
+                                <h4>{{ Proyecto.nombrePro }}</h4>
+                                <h6>{{ Proyecto.autorPro }}</h6>
+                            </div>
+                            <div class="tar-body-edit">
+                                <p>{{ Proyecto.descripcionPro }}</p>
+                                <div class="repo-live-edit d-flex">
+                                    <a [href]="Proyecto.urlLive" target="_bank"><i class="fa-solid fa-up-right-from-square"></i>LIVE DEMO</a>
+                                    <a [href]="Proyecto.urlRepo" target="_bank"><i class="fa-brands fa-github"></i>REPOSITORIO</a>                                
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <!-- Modo Vista -->
-            <div class="col-lg-5 col-md-5 col-sm-8 tarjeta" *ngIf="!false">
-                <div class="tar-head">
-                    <div class="head-img">
-                        <img src="../../../assets/img/portafolio.jpg" alt="portafolioweb">
-                    </div>
-                    <div class="head-proy">
-                        <i class="fa-solid fa-circle-info"></i>
-                        <div class="proy-titulo">
-                            <h4>Proyecto</h4>
-                            <h6>Tomás Caratti</h6>
+            <div *ngIf="!isLogged">
+                <div class="m-0 p-0" *ngFor="let Proyecto of proyect">
+                    <div class="col-lg-5 col-md-5 col-sm-8 tarjeta">
+                        <div class="tar-head">
+                            <div class="head-img">
+                                <img [src]="Proyecto.imgPro" alt="portafolioweb">
+                            </div>
+                            <div class="head-proy">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <div class="proy-titulo">
+                                    <h4>{{ Proyecto.nombrePro }}</h4>
+                                    <h6>{{ Proyecto.autorPro }}</h6>
+                                    </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="tar-body">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente, odit aspernatur quod natus quaerat exercitationem.</p>
-                    <div class="repo-live">
-                        <a href="#" target="_bank"><i class="fa-solid fa-up-right-from-square"></i>LIVE DEMO</a>
-                        <a href="#" target="_bank"><i class="fa-brands fa-github"></i>REPOSITORIO</a>                                
+                        <div class="tar-body">
+                            <p>{{ Proyecto.descripcionPro }}</p>
+                            <div class="repo-live">
+                                <a [href]="Proyecto.urlLive" target="_bank"><i class="fa-solid fa-up-right-from-square"></i>LIVE DEMO</a>
+                                <a [href]="Proyecto.urlRepo" target="_bank"><i class="fa-brands fa-github"></i>REPOSITORIO</a>                                
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>

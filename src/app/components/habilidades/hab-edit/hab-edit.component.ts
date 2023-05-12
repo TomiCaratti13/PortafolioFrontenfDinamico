@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Habilidad } from 'src/app/model/habilidad';
 import { HabilidadService } from 'src/app/services/habilidad.service';
 
 @Component({
@@ -8,16 +10,29 @@ import { HabilidadService } from 'src/app/services/habilidad.service';
 })
 export class HabEditComponent implements OnInit{
 
-  nombreHys: string = "";
-  porcentaje: number = 0;
+  hab: Habilidad = null;
 
-  constructor (private serHabilidad: HabilidadService) {}
+  constructor (private serHabilidad: HabilidadService, private activatedRoute: ActivatedRoute,
+    private router: Router) {}
 
-  ngOnInit(): void {
-    
-  }
+    ngOnInit(): void {
+      const id = this.activatedRoute.snapshot.params['id'];
+      this.serHabilidad.detail(id).subscribe(data => {
+        this.hab = data
+      }, err => {
+        alert("Error");
+        this.router.navigate(['']);
+      });
+    }
 
-  Crear(): void{
-
-  }
+    Editar(): void {
+      const id = this.activatedRoute.snapshot.params['id'];
+      this.serHabilidad.update(id, this.hab).subscribe(data => {
+        alert("Habilidad editada");
+        this.router.navigate(['']);
+      }, err => {
+        alert("Error al editar habilidad");
+        this.router.navigate(['']);
+      });
+    }
 }

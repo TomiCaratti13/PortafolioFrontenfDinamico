@@ -11,9 +11,6 @@ import { TokenService } from 'src/app/services/token.service';
 export class ExperienciaComponent implements OnInit{
   exp: Experiencia[] = [];
 
-  ModoAdd: boolean = false;
-  ModoEdit: boolean = false;
-
   constructor(private serExperiencia: ExperienciaService , private tokenService: TokenService){}
 
   isLogged = false;
@@ -33,4 +30,14 @@ export class ExperienciaComponent implements OnInit{
     });
   }
 
+  Borrar(id?: number) {
+    if(id != undefined) {
+      this.serExperiencia.delete(id).subscribe(data => {
+        this.cargarExperiencia();
+        alert("Experiencia eliminada");
+      }, err =>{
+        alert("Error al eliminar");
+      });
+    }
+  }
 }

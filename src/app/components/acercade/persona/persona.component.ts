@@ -11,9 +11,9 @@ import { TokenService } from 'src/app/services/token.service';
   styleUrls: ['./persona.component.css']
 })
 export class PersonaComponent implements OnInit{
-  persona: Persona = new Persona("","","","","","");
+  persona: Persona = null;
 
-  constructor(public personaService: PersonaService, private tokenService: TokenService, private router: Router){}
+  constructor(public personaService: PersonaService, private tokenService: TokenService){}
 
   isLogged = false;
 

@@ -1,8 +1,8 @@
-<div class="add">
-    <div class="modal-dialog modal-dialog-centered">
+<div class=" container d-flex justify-content-center mt-5">
+    <div class="modal-dialog modal-dialog-centered add">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5">Añadir Educacion</h1>
+                <h1 class="modal-title fs-5 text-white">Añadir Educacion</h1>
             </div>
             <div class="modal-body">
                 <form class="add-edu" #f="ngForm" (ngSubmit)="Crear()" novalidate>
@@ -26,8 +26,9 @@
                             <div *ngIf="descripcionEd.errors?.['required']" class="text-danger">
                                 <p class="m-0">La descripcion es obligatoria</p>
                             </div>
-                    <div class="modal-footer d-flex justify-content-around mt-2">
-                        <app-edicion></app-edicion>
+                    <div class="modal-footer d-flex justify-content-center mt-4">
+                        <!-- <app-edicion></app-edicion> -->
+                        <button class="btn btn-primary btn-lg">Aceptar <!--<i class="fa-solid fa-circle-check icon-p"></i>--></button>
                     </div>
                 </form>
             </div>

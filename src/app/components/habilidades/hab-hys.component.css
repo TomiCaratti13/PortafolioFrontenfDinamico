@@ -42,9 +42,6 @@
     color: var(--iconColor);
     transition: .3s;
 }
-.habilidades .habilidad .hab:hover span i{
-    background-color: var(--themeBGColor);
-}
 .habilidades .habilidad .hab .progress{
     height: 1rem;
     border: 0.01rem solid var(--themeBGColor);

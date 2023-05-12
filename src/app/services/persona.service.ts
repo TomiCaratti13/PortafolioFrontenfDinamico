@@ -26,7 +26,7 @@ export class PersonaService {
   }
 
   public update(id: number, persona: Persona): Observable<any> {
-    return this.httpClient.put<any>(this.URL + `editar/${id}`, persona);
+    return this.httpClient.put<any>(this.URL + `update/${id}`, persona);
   }
 
   /*public delete(id: number): Observable<any> {

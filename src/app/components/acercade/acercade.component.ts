@@ -6,6 +6,4 @@ import { Component, Input, Output } from '@angular/core';
   styleUrls: ['./acercade.component.css']
 })
 export class AcercadeComponent {
-  ModoEdit: boolean = false;
-
 }

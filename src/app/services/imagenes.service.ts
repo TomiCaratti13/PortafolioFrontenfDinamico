@@ -23,9 +23,8 @@ export class ImagenesService {
     const imagenesRef = ref(this.storage, 'imagen')
     list(imagenesRef)
     .then(async response => {
-      for(let item of response. items) {
+      for(let item of response.items) {
         this.url = await getDownloadURL (item);
-        console.log("LA URL ES: " + this.url);
       }
     })
     .catch(error => console.log(error))

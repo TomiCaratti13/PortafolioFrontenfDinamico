@@ -9,23 +9,25 @@ import { ExperienciaService } from 'src/app/services/experiencia.service';
   styleUrls: ['./exp-add.component.css']
 })
 export class ExpAddComponent implements OnInit{
-  cargoExp: string = "";
-  empresaExp: string = "";
-  fechaExp: string = "";
-  descripcionExp: string = "";
+
+  cargoExp: string = '';
+  empresaExp: string = '';
+  fechaExp: string = '';
+  descripcionExp: string = '';
 
   constructor (private serExperiencia: ExperienciaService, private router: Router) {}
 
   ngOnInit(): void {
+    
   }
 
   Crear(): void {
     const exp = new Experiencia(this.cargoExp, this.empresaExp, this.fechaExp, this.descripcionExp);
     this.serExperiencia.save(exp).subscribe(data => {
-      alert("Experiencia agregada");
+      alert("Experiencia añadida");
       this.router.navigate(['']);
     }, err => {
-      alert("Error");
+      alert("Falló al añadir");
       this.router.navigate(['']);
     });
   }

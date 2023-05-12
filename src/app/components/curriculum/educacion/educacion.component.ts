@@ -11,9 +11,6 @@ import { EducacionService } from 'src/app/services/educacion.service';
 export class EducacionComponent implements OnInit{
   edu: Educacion[] = [];
 
-  ModoAdd: boolean = false;
-  ModoEdit: boolean = false;
-
   constructor(private serEducacion: EducacionService, private tokenService: TokenService){}
 
   isLogged = false;
@@ -33,4 +30,14 @@ export class EducacionComponent implements OnInit{
     });
   }
 
+  Borrar(id?: number) {
+    if(id != undefined) {
+      this.serEducacion.delete(id).subscribe(data => {
+        this.cargarEducacion();
+        alert("Educacion eliminada");
+      }, err =>{
+        alert("Error al eliminar");
+      });
+    }
+  }
 }

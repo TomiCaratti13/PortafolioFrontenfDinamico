@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Experiencia } from 'src/app/model/experiencia';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
 
@@ -10,25 +10,31 @@ import { ExperienciaService } from 'src/app/services/experiencia.service';
 })
 export class ExpEditComponent implements OnInit{
 
-  cargoExp: string = "";
-  empresaExp: string = "";
-  fechaExp: string = "";
-  descripcionExp: string = "";
+  exp: Experiencia = null;
 
-  constructor (private serExperiencia: ExperienciaService, private activatedRouted: ActivatedRoute) {}
+  constructor (private serExperiencia: ExperienciaService, private activatedRoute: ActivatedRoute,
+    private router: Router) {}
 
 
   ngOnInit(): void {
-    // const id = this.activatedRouted.snapshot.params['id'];
-    // this.serExperiencia.detail(id).subscribe(data => {
-    //     this. = data
-    //   }// }, err => {
-    //   // alert("Error al editar experiencia")
-    // );//});
+    const id = this.activatedRoute.snapshot.params['id'];
+    this.serExperiencia.detail(id).subscribe(data => {
+      this.exp = data
+    }, err => {
+      alert("Error");
+      this.router.navigate(['']);
+    });
   }
 
-  onEdit():void {
-    
+  Editar(): void {
+    const id = this.activatedRoute.snapshot.params['id'];
+    this.serExperiencia.update(id, this.exp).subscribe(data => {
+      alert("Experiencia editada");
+      this.router.navigate(['']);
+    }, err => {
+      alert("Error al editar experiencia");
+      this.router.navigate(['']);
+    });
   }
 
 }

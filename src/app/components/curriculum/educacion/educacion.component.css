@@ -42,7 +42,7 @@
 .edu{
     border-right: 0.2rem solid var(--themeBGColor);
 }
-.certifi {
+/* .certifi {
     border: none;
     border-radius: 50% !important;
     background-color: var(--BGColor) !important;
@@ -61,4 +61,4 @@
 }
 .certifi:hover {
     background-color: var(--themeBGColor);
-}
+} */

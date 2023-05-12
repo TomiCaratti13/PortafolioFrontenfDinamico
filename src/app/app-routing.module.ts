@@ -1,22 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PortafolioComponent } from './components/portafolio/portafolio.component';
+
 import { LoginComponent } from './components/login/login.component';
-import { ExpAddComponent } from './components/curriculum/experiencia/exp-add/exp-add.component';
+import { PortafolioComponent } from './components/portafolio/portafolio.component';
 import { PersonaEditComponent } from './components/acercade/persona-edit/persona-edit.component';
-// import { RegisterComponent } from './components/register/register.component';
-// import { Page404Component } from './components/page404/page404.component';
+import { ExpAddComponent } from './components/curriculum/experiencia/exp-add/exp-add.component';
+import { ExpEditComponent } from './components/curriculum/experiencia/exp-edit/exp-edit.component';
+import { EduAddComponent } from './components/curriculum/educacion/edu-add/edu-add.component';
+import { EduEditComponent } from './components/curriculum/educacion/edu-edit/edu-edit.component';
+import { HabAddComponent } from './components/habilidades/hab-add/hab-add.component';
+import { HabEditComponent } from './components/habilidades/hab-edit/hab-edit.component';
 
 const routes: Routes = [
-  // {path: 'registro', component: RegisterComponent},
   {path: 'ingreso', component: LoginComponent},
-  {path: 'portafolio', component: PortafolioComponent},
-  {path: 'portafolio/:id', component: PortafolioComponent},
-  {path: '', redirectTo: 'portafolio', pathMatch: 'full'},
-  {path: '**', redirectTo: 'portafolio', pathMatch: 'full'},
-  {path: 'add-exp', component: ExpAddComponent},
+  {path: '', component: PortafolioComponent},
   {path: 'persona-edit/:id', component: PersonaEditComponent},
-  // {path: '**', component: Page404Component}
+  {path: 'nueva-exp', component: ExpAddComponent},
+  {path: 'nueva-edu', component: EduAddComponent},
+  {path: 'nueva-hab', component: HabAddComponent},
+  {path: 'editar-exp/:id', component: ExpEditComponent},
+  {path: 'editar-edu/:id', component: EduEditComponent}, 
+  {path: 'editar-hab/:id', component: HabEditComponent} 
 ];
 
 @NgModule({

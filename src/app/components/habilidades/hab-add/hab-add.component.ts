@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Habilidad } from 'src/app/model/habilidad';
 import { HabilidadService } from 'src/app/services/habilidad.service';
 
 @Component({
@@ -9,15 +11,23 @@ import { HabilidadService } from 'src/app/services/habilidad.service';
 export class HabAddComponent implements OnInit{
 
   nombreHys: string = "";
-  porcentaje: number = 0;
+  //iconoHys: string = "";
+  porcentaje: number = null;
 
-  constructor (private serHabilidad: HabilidadService) {}
+  constructor (private serHabilidad: HabilidadService, private router: Router) {}
 
   ngOnInit(): void {
     
   }
 
-  Crear(): void{
-
+  Crear(): void {
+    const hab = new Habilidad(this.nombreHys, this.porcentaje);
+    this.serHabilidad.save(hab).subscribe(data => {
+      alert("Experiencia añadida");
+      this.router.navigate(['']);
+    }, err => {
+      alert("Falló al añadir");
+      this.router.navigate(['']);
+    });
   }
 }

@@ -1,0 +1,66 @@
+<div *ngIf="persona">
+    <form action="" #f="ngForm" (ngSubmit)="Editar()" class="row m-0 p-0 container-fluid text-white justify-content-center">
+        <div class="col-lg-6">
+            <div class="image-upload d-sm-flex text-sm-start justify-content-center mt-2 mb-2 mx-sm-5 p-2">
+                <img [src]="imgService.url" alt="Perfil" class="perfil mx-sm-3" id="img" />
+                <div class="d-sm-flex mt-1 mb-1 mx-sm-4 labelimg text-sm-start">
+                    <label for="foto">Foto
+                        <span class="btn btn-light w-100">Cambiar</span>
+                    </label>
+                    <input [class]="{'is-invalid': foto.errors && (foto.dirty || foto.touched)}" id="foto" name="foto" type="file" accept=".jpg, .png, .jpeg" [(ngModel)]="persona.imgPerfil" required #foto="ngModel" (change)="subirImg($event)"/>
+                    <div *ngIf="foto.errors?.['required']" class="text-danger">
+                        <p class="m-0">La foto es obligatoria</p>
+                    </div>
+                </div>
+            </div>
+            <div class="informacion d-sm-flex align-items-center text-sm-start justify-content-center">
+                <div class="mx-1">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" [class]="{'is-invalid': nombre.errors && (nombre.dirty || nombre.touched)}" id="nombre" name="nombre" [(ngModel)]="persona.nombre" required #nombre="ngModel" placeholder="Ej: Tomás" autocomplete="off">
+                    <div *ngIf="nombre.errors?.['required']" class="text-danger">
+                        <p class="m-0">El nombre es obligatorio</p>
+                    </div>
+                </div>
+                <div class="mx-1">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" [class]="{'is-invalid': apellido.errors && (apellido.dirty || apellido. touched)}" id="apellido" name="apellido" [(ngModel)]="persona.apellido" required #apellido="ngModel" placeholder="Ej: Caratti" autocomplete="off">
+                    <div *ngIf="apellido.errors?.['required']" class="text-danger">
+                        <p class="m-0">El apellido es obligatorio</p>
+                    </div>
+                </div>
+                <!-- <div class="mx-1">
+                <label for="github" class="form-label">Nombre</label>
+                <input type="text" class="form-control" [class]="{'is-invalid': github.errors && (github.dirty || github.touched)}" id="github" name="github" [(ngModel)]="persona.github" required #github="ngModel" placeholder="Ej: Tomás" autocomplete="off">
+                <div *ngIf="github.errors?.['required']" class="text-danger">
+                    <p>Github es obligatorio</p>
+                </div>
+            </div>
+            <div class="mx-1">
+                <label for="linkedin" class="form-label">Linkedin</label>
+                <input type="text" class="form-control" [class]="{'is-invalid': linkedin.errors && (linkedin.dirty || linkedin.touched)}" id="linkedin" name="linkedin" [(ngModel)]="persona.linkedin" required #linkedin="ngModel" placeholder="Ej: Caratti" autocomplete="off">
+                <div *ngI="flinkedin.errors?.['required']" class="text-danger">
+                    <p>Linkedin es obligatorio</p>
+                </div>
+            </div> -->
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="descripcion align-items-center text-lg-start">
+                <label for="titulo" class="form-label">Título</label>
+                <input type="text" class="form-control" [class]="{'is-invalid': titulo.errors && (titulo.dirty || titulo.touched)}" id="titulo" name="titulo" [(ngModel)]="persona.titulo" required #titulo="ngModel" placeholder="Ej: Programador Web Full stack" autocomplete="off">
+                <div *ngIf="titulo.errors?.['required']" class="text-danger">
+                    <p class="m-0">El título es obligatorio</p>
+                </div>
+                <label for="descripcion" class="form-label">Descripcion</label>
+                <textarea name="descripcion" class="form-control" [class]="{'is-invalid': descripcion.errors && (descripcion.dirty || descripcion.touched)}" id="descripcion" cols="70" rows="3" [(ngModel)]="persona.descripcion" required #descripcion="ngModel" placeholder="Escriba aquí una descripcion suya..." autocomplete="off"></textarea>
+                <div *ngIf="descripcion.errors?.['required']" class="text-danger">
+                    <p class="m-0">La descripcion es obligatoria</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-outline-success m-2" [disabled]="!f.form.valid">Guardar</button>
+            <button type="button" class="btn btn-outline-danger">Cancelar</button>
+        </div>
+    </form>
+</div>
