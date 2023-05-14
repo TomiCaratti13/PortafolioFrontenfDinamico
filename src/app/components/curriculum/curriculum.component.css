@@ -8,7 +8,14 @@
     margin-top: 3.5rem !important;
     padding-bottom: 1rem !important;
 }
-/* .curriculum .cvitae button {
+.curriculum .cvitae {
     cursor: pointer;
     margin-top: 4rem;
-} */
+}
+.curriculum .cvitae a {
+    padding: 0.2rem 0.5rem !important;
+    letter-spacing: -0.05rem;
+    align-items: center;
+    text-decoration: none;
+    color: var(--iconColor);
+}

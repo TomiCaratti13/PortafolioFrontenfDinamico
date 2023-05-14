@@ -1,8 +1,9 @@
-<div class="add">
-    <div class="modal-dialog modal-dialog-centered">
+
+<div class=" container d-flex justify-content-center mt-5">
+    <div class="modal-dialog modal-dialog-centered add">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5">Añadir Proyecto</h1>
+                <h1 class="modal-title fs-5 text-white">Añadir Proyecto</h1>
             </div>
             <div class="modal-body">
                 <form class="add-edu" #f="ngForm" (ngSubmit)="Crear()" novalidate>
@@ -32,24 +33,16 @@
                             <p class="m-0">La descripcion es obligatoria</p>
                         </div>
                     <div class="image-upload d-sm-flex justify-content-center mt-2 mb-2">
-                        <img src="../../../../assets/img/portafolio.jpg" alt="Imagen" id="img" class="mt-2 mb-2"/>
+                        <img [src]="imgService.url" alt="Imagen" id="img" class="mt-2 mb-2"/>
                         <div class="d-sm-flex mt-1 mb-1 mx-sm-4 labelimg text-sm-start">
                             <label for="foto">Foto
                                 <span class="btn btn-light w-100">Cambiar</span>
                             </label>
-                            <!-- <input [class]="{'is-invalid': foto.errors && (foto.dirty || foto.touched)}" id="foto"name="foto" type="file" accept=".jpg, .png, .jpeg" [(ngModel)]="imgPro" required #foto="ngModel" (change)="subirImg($event)"/> -->
-                            <input [class]="{'is-invalid': foto.errors && (foto.dirty || foto.touched)}" id="foto"name="foto" type="file" accept=".jpg, .png, .jpeg" [(ngModel)]="imgPro" required #foto="ngModel"/>
-                            <div *ngIf="foto.errors?.['required']" class="text-danger">
-                                <p class="m-0">La foto es obligatoria</p>
-                            </div>
+                            <input id="foto"name="foto" type="file" accept=".jpg, .png, .jpeg" [(ngModel)]="imgPro" required #foto="ngModel" (change)="subirImg($event)"/>
                         </div>
                     </div>
-                    <div class="modal-footer d-flex justify-content-around mt-2">
-                        <!-- <app-edicion></app-edicion> -->
-                        <div class="p-2">
-                            <button class="btn btn-outline-success me-2">Guardar</button>
-                            <button class="btn btn-outline-danger">Cancelar</button>
-                        </div>
+                    <div class="modal-footer d-flex justify-content-center mt-4">
+                        <button class="btn btn-primary btn-lg">Aceptar <!--<i class="fa-solid fa-circle-check icon-p"></i>--></button>
                     </div>
                 </form>
             </div>

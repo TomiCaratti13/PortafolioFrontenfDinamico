@@ -21,13 +21,12 @@
                         <div *ngIf="fechaEd.errors?.['required']" class="text-danger">
                             <p class="m-0">La fecha es obligatoria</p>
                         </div>
-                        <label for="descripcionEd" class="form-label">Descripcion</label>
-                        <textarea class="form-control" [class]="{'is-invalid': descripcionEd.errors && (descripcionEd.dirty || descripcionEd.touched)}" id="descripcionEd" name="descripcionEd" cols="50" rows="2" [(ngModel)]="descripcionEdu" required #descripcionEd="ngModel" autocomplete="off"></textarea>
-                            <div *ngIf="descripcionEd.errors?.['required']" class="text-danger">
-                                <p class="m-0">La descripcion es obligatoria</p>
-                            </div>
+                    <label for="descripcionEd" class="form-label">Descripcion</label>
+                    <textarea class="form-control" [class]="{'is-invalid': descripcionEd.errors && (descripcionEd.dirty || descripcionEd.touched)}" id="descripcionEd" name="descripcionEd" cols="50" rows="2" [(ngModel)]="descripcionEdu" required #descripcionEd="ngModel" autocomplete="off"></textarea>
+                        <div *ngIf="descripcionEd.errors?.['required']" class="text-danger">
+                            <p class="m-0">La descripcion es obligatoria</p>
+                        </div>
                     <div class="modal-footer d-flex justify-content-center mt-4">
-                        <!-- <app-edicion></app-edicion> -->
                         <button class="btn btn-primary btn-lg">Aceptar <!--<i class="fa-solid fa-circle-check icon-p"></i>--></button>
                     </div>
                 </form>

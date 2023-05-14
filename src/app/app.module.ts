@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ScrollSpyModule } from 'ngx-scrollspy';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,7 +23,6 @@ import { EducacionComponent } from './components/curriculum/educacion/educacion.
 import { ExpAddComponent } from './components/curriculum/experiencia/exp-add/exp-add.component';
 import { ExpEditComponent } from './components/curriculum/experiencia/exp-edit/exp-edit.component';
 import { EduAddComponent } from './components/curriculum/educacion/edu-add/edu-add.component';
-import { EduEditComponent } from './components/curriculum/educacion/edu-edit/edu-edit.component';
 import { PersonaComponent } from './components/acercade/persona/persona.component';
 import { PersonaEditComponent } from './components/acercade/persona-edit/persona-edit.component';
 import { HabEditComponent } from './components/habilidades/hab-edit/hab-edit.component';
@@ -36,16 +34,42 @@ import { ProyectEditComponent } from './components/proyectos/proyect-edit/proyec
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage, getStorage } from '@angular/fire/storage';
+import { EditBannerComponent } from './components/header/banner/edit-banner.component';
+import { EduEditComponent } from './components/curriculum/educacion/edu-edit/edu-edit.component';
 
 @NgModule({
   declarations: [
-    AppComponent, NavbarComponent, HeaderComponent, AcercadeComponent,CurriculumComponent, LoginComponent,
-    ProyectosComponent, PortafolioComponent, BannerComponent,FooterComponent, ExperienciaComponent,
-    EducacionComponent, ExpAddComponent, ExpEditComponent, EduAddComponent, EduEditComponent, PersonaComponent, PersonaEditComponent, HabEditComponent,
-    HabAddComponent, HabHysComponent, ProyectAddComponent, ProyectEditComponent
+    AppComponent,
+    NavbarComponent,
+    HeaderComponent,
+    AcercadeComponent,
+    CurriculumComponent,
+    LoginComponent,
+    ProyectosComponent,
+    PortafolioComponent,
+    BannerComponent,
+    FooterComponent,
+    ExperienciaComponent,
+    EducacionComponent,
+    ExpAddComponent,
+    ExpEditComponent,
+    EduAddComponent,
+    PersonaComponent,
+    PersonaEditComponent,
+    HabEditComponent,
+    HabAddComponent,
+    HabHysComponent,
+    ProyectAddComponent,
+    ProyectEditComponent,
+    EditBannerComponent,
+    EduEditComponent
   ],
   imports: [
-    BrowserModule, ScrollSpyModule.forRoot(), BrowserAnimationsModule, AppRoutingModule, HttpClientModule, FormsModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage())

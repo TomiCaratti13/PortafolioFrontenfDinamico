@@ -9,7 +9,6 @@ import { HabilidadService } from 'src/app/services/habilidad.service';
   styleUrls: ['./hab-edit.component.css']
 })
 export class HabEditComponent implements OnInit{
-
   hab: Habilidad = null;
 
   constructor (private serHabilidad: HabilidadService, private activatedRoute: ActivatedRoute,

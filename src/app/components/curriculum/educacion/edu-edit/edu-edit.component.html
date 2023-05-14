@@ -8,26 +8,25 @@
                 <form class="edit-edu" #f="ngForm" (ngSubmit)="Editar()" novalidate>
                     <label for="tituloEd" class="form-label">Título</label>
                     <input type="text" class="form-control" [class]="{'is-invalid': tituloEd.errors && (tituloEd.dirty || tituloEd.touched)}" id="tituloEd" name="tituloEd" [(ngModel)]="edu.tituloEdu" required #tituloEd="ngModel" autocomplete="off">
-                    <div *ngIf="tituloEd.errors?.['required']" class="text-danger">
-                        <p class="m-0">El título es obligatorio</p>
-                    </div>
+                        <div *ngIf="tituloEd.errors?.['required']" class="text-danger">
+                            <p class="m-0">El título es obligatorio</p>
+                        </div>
                     <label for="instiEd" class="form-label">Institución</label>
                     <input type="text" class="form-control" [class]="{'is-invalid': instiEd.errors && (instiEd.dirty || instiEd.touched)}" id="instiEd" name="instiEd" [(ngModel)]="edu.instiEdu" required #instiEd="ngModel" autocomplete="off">
-                    <div *ngIf="instiEd.errors?.['required']" class="text-danger">
-                        <p class="m-0">La institución es obligatoria</p>
-                    </div>
+                        <div *ngIf="instiEd.errors?.['required']" class="text-danger">
+                            <p class="m-0">La instituciónes obligatoria</p>
+                        </div>
                     <label for="fechaEd" class="form-label">Fecha</label>
                     <input type="text" class="form-control" [class]="{'is-invalid': fechaEd.errors && (fechaEd.dirty || fechaEd.touched)}" id="fechaEd" name="fechaEd" [(ngModel)]="edu.fechaEdu" required #fechaEd="ngModel" autocomplete="off">
-                    <div *ngIf="fechaEd.errors?.['required']" class="text-danger">
-                        <p class="m-0">La fecha es obligatoria</p>
-                    </div>
+                        <div *ngIf="fechaEd.errors?.['required']" class="text-danger">
+                            <p class="m-0">La fecha es obligatoria</p>
+                        </div>
                     <label for="descripcionEd" class="form-label">Descripcion</label>
                     <textarea class="form-control" [class]="{'is-invalid': descripcionEd.errors && (descripcionEd.dirty || descripcionEd.touched)}" id="descripcionEd" name="descripcionEd" cols="50" rows="2" [(ngModel)]="edu.descripcionEdu" required #descripcionEd="ngModel" autocomplete="off"></textarea>
                         <div *ngIf="descripcionEd.errors?.['required']" class="text-danger">
                             <p class="m-0">La descripcion es obligatoria</p>
                         </div>
                     <div class="modal-footer d-flex justify-content-center mt-4">
-                        <!-- <app-edicion></app-edicion> -->
                         <button class="btn btn-primary">Aceptar <!--<i class="fa-solid fa-circle-check icon-p"></i>--></button>
                     </div>
                 </form>

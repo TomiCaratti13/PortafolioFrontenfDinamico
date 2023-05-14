@@ -2,8 +2,8 @@ export const environment = {
 
   production: false,
 
-  // URL: 'https://trcbackend.onrender.com/',
-  URL: 'http://localhost:8080/',
+  URL: 'https://trcbackend.onrender.com/',
+  // URL: 'http://localhost:8080/',
 
   firebase: {
     projectId: 'tomascaratti-portafolio',

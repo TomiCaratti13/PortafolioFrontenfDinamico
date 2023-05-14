@@ -1,0 +1,25 @@
+<div class=" container d-flex justify-content-center mt-5" *ngIf="persona">
+    <div class="modal-dialog modal-dialog-centered edit">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 text-white">Editar Persona</h1>
+            </div>
+            <div class="modal-body">
+                <form class="add-edu" #f="ngForm" (ngSubmit)="Editar()" novalidate>
+                    <div class="image-upload d-sm-flex text-sm-start justify-content-center mt-2 mb-2 mx-sm-5 p-2">
+                        <img [src]="imgService.url" alt="Perfil" class="perfil mx-sm-3" id="img" />
+                        <div class="d-sm-flex mt-1 mb-1 mx-sm-4 labelimg text-sm-start">
+                            <label for="foto">Foto
+                                <span class="btn btn-light w-100">Cambiar</span>
+                            </label>
+                            <input id="foto" name="foto" type="file" accept=".jpg, .png, .jpeg" [(ngModel)]="persona.imgPerfil" required (change)="subirImg($event)"/>
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center mt-4">
+                        <button class="btn btn-primary">Aceptar <!--<i class="fa-solid fa-circle-check icon-p"></i>--></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

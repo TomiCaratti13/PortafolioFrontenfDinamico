@@ -6,18 +6,19 @@
                 <i class="fa-solid fa-terminal"></i>
                 <p class="textlogo text-white mb-0 d-none d-md-block">Argentina<br>Programa</p>
             </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavBarCollapse" aria-controls="NavBarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i><!--<i class="fa-solid fa-xmark"></i>--></span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavBarCollapse" aria-controls="NavBarCollapse" aria-expanded="false" aria-label="Toggle navigation" (click)="isNavbarCollapsed = !isNavbarCollapsed">
+            <i [ngClass]="{'fa-solid fa-bars': isNavbarCollapsed}"></i>
+            <i [ngClass]="{'fa-solid fa-xmark': !isNavbarCollapsed}"></i>
         </button>
         <div class="collapse navbar-collapse" id="NavBarCollapse">
             <!-- Navbar menu -->
             <ul class="navbar-nav mx-auto menu">
-                <li><a class="nav-item nav-link active" href="''" scrollSpyAnimate><i class="fa-solid fa-house"></i>Inicio</a></li>
-                <li><a class="nav-item nav-link" href="#acercade" scrollSpyAnimate><i class="fa-solid fa-user"></i>Acerca de mí</a></li>
-                <li><a class="nav-item nav-link" href="#curriculum" scrollSpyAnimate><i class="fa-solid fa-file"></i>Curriculum</a></li>
-                <li><a class="nav-item nav-link" href="#habilidades" scrollSpyAnimate><i class="fa-solid fa-network-wired"></i>Habilidades</a></li>
-                <li><a class="nav-item nav-link" href="#proyectos" scrollSpyAnimate><i class="fa-solid fa-file-code"></i>Proyectos</a></li>
-                <!-- <li><a class="nav-item nav-link" href="#contacto"><i class="fa fa-envelope-open-text"></i>Contacto</a></li> -->
+                <li><a class="nav-item nav-link active" href=""><i class="fa-solid fa-house"></i>Inicio</a></li>
+                <li><a class="nav-item nav-link" [ngClass]="{'active': activePage === 'acercade'}" href="#acercade" (click)="activePage = 'acercade'"><i class="fa-solid fa-user"></i>Acerca de mí</a></li>
+                <li><a class="nav-item nav-link" [ngClass]="{'active': activePage === 'curriculum'}" href="#curriculum" (click)="activePage = 'curriculum'"><i class="fa-solid fa-file"></i>Curriculum</a></li>
+                <li><a class="nav-item nav-link" [ngClass]="{'active': activePage === 'habilidades'}" href="#habilidades" (click)="activePage = 'habilidades'"><i class="fa-solid fa-network-wired"></i>Habilidades</a></li>
+                <li><a class="nav-item nav-link" [ngClass]="{'active': activePage === 'proyectos'}" href="#proyectos" (click)="activePage = 'proyectos'"><i class="fa-solid fa-file-code"></i>Proyectos</a></li>
+                <!-- <li><a class="nav-item nav-link" [ngClass]="{'active': activePage === 'contacto'}" href="#contacto" (click)="activePage = 'contacto'"><i class="fa fa-envelope-open-text"></i>Contacto</a></li> -->
             </ul>
             <!-- Boton login -->
             <button type="button" class="btn btn-primary" (click)="login()" *ngIf="!isLogged">Entrar<i class="fa-solid fa-user-lock icon-p"></i></button>

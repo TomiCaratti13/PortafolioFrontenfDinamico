@@ -7,6 +7,21 @@ nav {
     --bs-navbar-padding-x: 0;
     --bs-navbar-padding-y: 0.3rem;
 }
+.navbar-nav {
+align-items: center !important;
+justify-content: center !important;
+}
+.navbar-toggler {
+    border: none !important;
+    align-items: center !important;
+    color: #fff !important;
+    width: 2.6rem !important;
+    height: 2rem !important;
+}
+.navbar-toggler:focus {
+    box-shadow: none !important;
+    background-color: var(--themeBGColor) !important;
+}
 /* -----logo AP----- */
 .navbar-brand i {
 display: inline-block;

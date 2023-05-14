@@ -9,6 +9,9 @@ import { TokenService } from 'src/app/services/token.service';
 })
 export class NavbarComponent implements OnInit{
   isLogged = false;
+  isNavbarCollapsed = true;
+  activePage: string = '';
+  Inicio: boolean = true;
 
   constructor(private router:Router, private tokenService: TokenService) {}
 

@@ -1,6 +1,5 @@
 
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
 import { Persona } from 'src/app/model/persona.model';
 import { PersonaService } from 'src/app/services/persona.service';
 import { TokenService } from 'src/app/services/token.service';
@@ -11,11 +10,10 @@ import { TokenService } from 'src/app/services/token.service';
   styleUrls: ['./persona.component.css']
 })
 export class PersonaComponent implements OnInit{
-  persona: Persona = null;
+  persona: Persona = { nombre: '', apellido: '', titulo: '', descripcion: '', imgBanner: '', imgPerfil: ''};
+  isLogged = false;
 
   constructor(public personaService: PersonaService, private tokenService: TokenService){}
-
-  isLogged = false;
 
   ngOnInit(): void {
     this.cargarPersona();

@@ -30,4 +30,15 @@ export class ProyectosComponent {
     });
   }
 
+
+  Borrar(id?: number) {
+    if(id != undefined) {
+      this.serProyecto.delete(id).subscribe(data => {
+        this.cargarProyecto();
+        alert("Proyecto eliminado");
+      }, err =>{
+        alert("Error al eliminar");
+      });
+    }
+  }
 }

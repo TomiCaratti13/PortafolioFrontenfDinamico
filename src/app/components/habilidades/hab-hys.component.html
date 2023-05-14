@@ -2,24 +2,23 @@
 <section id="habilidades" class="habilidades">
     <div class="row m-0 p-0 container-fluid justify-content-center text-white">
         <h2 class="text-center">Habilidades
-            <!-- <app-boton-add class="position-absolute end-0 mx-5"></app-boton-add> -->
-            <button class="edicion add position-absolute end-0 mx-5" routerLink="nueva-hab" *ngIf="isLogged"><i class="fa-solid fa-circle-plus"></i></button>
+            <button class="edicion add position-absolute end-0 mx-5" routerLink="/nueva-hab" *ngIf="isLogged"><i class="fa-solid fa-circle-plus"></i></button>
         </h2>
-        <!-- <div class="col-lg-4 col-md-8 col-sm-10"><app-hab-add></app-hab-add></div><div class="col-lg-4 col-md-8 col-sm-10"><app-hab-edit></app-hab-edit></div> -->
-        <div *ngFor="let Habilidad of hab">
+        <div *ngFor="let Habilidad of hab; let i = index">
             <div class="col-lg-4 col-md-8 col-sm-10 habilidad">
                 <div class="hab">
                     <div *ngIf="isLogged" class=" d-flex justify-content-between">
-                        <span class="d-flex"><h5>{{ Habilidad.nombreHys }}</h5><!--<i class="fa-brands fa-html5 mx-2"></i>--></span>
+                        <span class="d-flex"><h5>{{i + 1}}:{{ Habilidad.nombreHys }}</h5><i [class]="Habilidad.iconoHys" class="mx-2"></i></span>
                         <div class="editar d-flex">
-                            <!-- <app-boton-edit></app-boton-edit><app-boton-delet></app-boton-delet> -->
                             <button class="edicion" routerLink="editar-hab/{{Habilidad.id}}"><i class="fa-solid fa-pen-to-square"></i></button>
                             <button class="edicion" (click)="Borrar(Habilidad.id)"><i class="fa-solid fa-trash-can"></i></button>
                         </div>
                     </div>
-                    <span class="d-flex justify-content-between" *ngIf="!isLogged"><h5>{{ Habilidad.nombreHys }}</h5><!--<i class="fa-brands fa-html5"></i>--></span>
-                    <div class="progress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" [style.width]="Habilidad.porcentaje + '%'">{{ Habilidad.porcentaje }}%</div>
+                    <div *ngIf="!isLogged">
+                        <span class="d-flex justify-content-between"><h5>{{ Habilidad.nombreHys }}</h5><i [class]="Habilidad.iconoHys"></i></span>
+                        <div class="progress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" [style.width]="Habilidad.porcentaje + '%'">{{ Habilidad.porcentaje }}%</div>
+                        </div>
                     </div>
                 </div>
             </div>

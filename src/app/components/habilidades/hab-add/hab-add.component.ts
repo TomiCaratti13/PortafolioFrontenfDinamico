@@ -10,9 +10,9 @@ import { HabilidadService } from 'src/app/services/habilidad.service';
 })
 export class HabAddComponent implements OnInit{
 
-  nombreHys: string = "";
-  //iconoHys: string = "";
-  porcentaje: number = null;
+  nombreHys: string;
+  iconoHys: string;
+  porcentaje: number;
 
   constructor (private serHabilidad: HabilidadService, private router: Router) {}
 
@@ -21,12 +21,12 @@ export class HabAddComponent implements OnInit{
   }
 
   Crear(): void {
-    const hab = new Habilidad(this.nombreHys, this.porcentaje);
+    const hab = new Habilidad(this.nombreHys, this.iconoHys, this.porcentaje);
     this.serHabilidad.save(hab).subscribe(data => {
-      alert("Experiencia añadida");
+      alert("Habilidad añadida");
       this.router.navigate(['']);
     }, err => {
-      alert("Falló al añadir");
+      alert("Error al añadir");
       this.router.navigate(['']);
     });
   }

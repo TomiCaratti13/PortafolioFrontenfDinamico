@@ -13,10 +13,7 @@
                             <label for="foto">Foto
                                 <span class="btn btn-light w-100">Cambiar</span>
                             </label>
-                            <input [class]="{'is-invalid': foto.errors && (foto.dirty || foto.touched)}" id="foto" name="foto" type="file" accept=".jpg, .png, .jpeg" [(ngModel)]="persona.imgPerfil" required #foto="ngModel" (change)="subirImg($event)"/>
-                            <div *ngIf="foto.errors?.['required']" class="text-danger">
-                                <p class="m-0">La foto es obligatoria</p>
-                            </div>
+                            <input id="foto" name="foto" type="file" accept=".jpg, .png, .jpeg" [(ngModel)]="persona.imgPerfil" required (change)="subirImg($event)"/>
                         </div>
                     </div>
                     <label for="nombre" class="form-label">Nombre</label>
@@ -40,7 +37,6 @@
                             <p class="m-0">La descripcion es obligatoria</p>
                         </div>
                     <div class="modal-footer d-flex justify-content-center mt-4">
-                        <!-- <app-edicion></app-edicion> -->
                         <button class="btn btn-primary" [disabled]="!f.form.valid">Aceptar <!--<i class="fa-solid fa-circle-check icon-p"></i>--></button>
                     </div>
                 </form>

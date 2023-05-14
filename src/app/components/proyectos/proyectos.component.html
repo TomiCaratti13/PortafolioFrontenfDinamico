@@ -2,21 +2,17 @@
 <section id="proyectos" class="proyectos">
     <div class="row m-0 p-0 container-fluid justify-content-center text-white">
         <h2 class="text-center">Proyectos
-            <!-- <app-boton-add class="position-absolute end-0 mx-5"></app-boton-add> -->
-            <button class="edicion add position-absolute end-0 mx-5" *ngIf="isLogged"><i class="fa-solid fa-circle-plus"></i></button>
+            <button class="edicion add position-absolute end-0 mx-5" routerLink="/nuevo-proy" *ngIf="isLogged"><i class="fa-solid fa-circle-plus"></i></button>
         </h2>
         <div class="proyecto">
-            <!-- <div class="col-lg-5 col-md-5 col-sm-8 m-2"><app-proyect-add></app-proyect-add></div><div class="col-lg-5 col-md-5 col-sm-8 m-2"><app-proyect-edit></app-proyect-edit></div> -->
-
             <!-- Modo Edicion -->
             <div *ngIf="isLogged">
                 <div class="m-0 p-0" *ngFor="let Proyecto of proyect">
                     <div class="col-lg-5 col-md-5 col-sm-8 tarjeta">
                         <div class="tar-head-edit">
                             <div class="editar d-flex justify-content-end">
-                                <!-- <app-boton-edit></app-boton-edit><app-boton-delet></app-boton-delet> -->
-                                <button class="edicion"><i class="fa-solid fa-pen-to-square"></i></button>
-                                <button class="edicion"><i class="fa-solid fa-trash-can"></i></button>
+                                <button class="edicion" routerLink="/editar-proy/{{Proyecto.id}}"><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button class="edicion" (click)="Borrar(Proyecto.id)"><i class="fa-solid fa-trash-can"></i></button>
                             </div>
                             <div class="head-img-edit">
                                 <img [src]="Proyecto.imgPro" alt="portafolioweb">
@@ -36,7 +32,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Modo Vista -->
             <div *ngIf="!isLogged">
                 <div class="m-0 p-0" *ngFor="let Proyecto of proyect">

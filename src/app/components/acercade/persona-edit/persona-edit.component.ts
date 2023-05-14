@@ -15,15 +15,15 @@ export class PersonaEditComponent implements OnInit{
   constructor (private serPersona: PersonaService, private activatedRouted: ActivatedRoute,
     public imgService: ImagenesService, private router: Router) {}
 
-    ngOnInit(): void {
-      const id = this.activatedRouted.snapshot.params['id'];
-      this.serPersona.detail(id).subscribe(data => {
-        this.persona = data
-      }, err => {
-        alert("Error");
-        this.router.navigate(['']);
-      });
-    }
+  ngOnInit(): void {
+    const id = this.activatedRouted.snapshot.params['id'];
+    this.serPersona.detail(id).subscribe(data => {
+      this.persona = data
+    }, err => {
+      alert("Error");
+      this.router.navigate(['']);
+    });
+  }
 
   Editar(): void {
     const id = this.activatedRouted.snapshot.params['id'];
@@ -32,7 +32,7 @@ export class PersonaEditComponent implements OnInit{
       alert("Editado correctamente");
       this.router.navigate(['']);
     }, err => {
-      alert("Error al editar persona");
+      alert("Error al editar Persona");
       this.router.navigate(['']);
     });
   }

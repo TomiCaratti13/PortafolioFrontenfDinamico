@@ -1,13 +1,10 @@
 <div class="m-0 colum educacion">
     <h3 class="d-flex justify-content-between">Educacion
-        <!-- <app-boton-add *ngIf="isLogged"></app-boton-add> -->
         <button class="edicion add" routerLink="/nueva-edu" *ngIf="isLogged"><i class="fa-solid fa-circle-plus"></i></button>
     </h3>
-    <!-- <app-edu-add *ngIf="!ModoAdd"></app-edu-add><app-edu-edit *ngIf="!ModoEdit"></app-edu-edit> -->
     <div class="m-0 p-0" *ngFor="let Educacion of edu">
         <div class="item edu">
             <div class="editar d-flex justify-content-end" *ngIf="isLogged">
-                <!-- <app-boton-edit></app-boton-edit><app-boton-delet></app-boton-delet> -->
                 <button class="edicion" routerLink="/editar-edu/{{Educacion.id}}"><i class="fa-solid fa-pen-to-square"></i></button>
                 <button class="edicion" (click)="Borrar(Educacion.id)"><i class="fa-solid fa-trash-can"></i></button>
             </div>
