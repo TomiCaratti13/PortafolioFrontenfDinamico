@@ -28,7 +28,8 @@ export class BannerComponent implements OnInit{
   cargarPersona(){
     this.personaService.detail(1).subscribe(data => {
       this.persona = data
-      this.Banner = `url(${this.persona.imgBanner})`;
+      // this.Banner = `url(${this.persona.imgBanner})`;
+      this.Banner = `linear-gradient(rgb(1, 0, 12, 0.5), rgba(1, 0, 12, 0.5)), url(${this.persona.imgBanner})`;
     });
   }
 }

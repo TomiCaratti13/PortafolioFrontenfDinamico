@@ -9,7 +9,7 @@
     margin: 0.2rem 0 !important;
     font-weight: 600 !important;
 }
-.image-upload {
+/* .image-upload {
     width: 100%;
     border-radius: 20px;
     border: 0.2rem solid var(--iconColor);
@@ -23,4 +23,4 @@
 .labelimg {
     justify-content: center;
     flex-direction: column;
-}
+} */

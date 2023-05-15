@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Persona } from 'src/app/model/persona.model';
-import { ImagenesService } from 'src/app/services/imagenes.service';
+import { ArchivoService } from 'src/app/services/archivo.service';
 import { PersonaService } from 'src/app/services/persona.service';
 
 @Component({
-  selector: 'app-persona-edit',
-  templateUrl: './persona-edit.component.html',
-  styleUrls: ['./persona-edit.component.css']
+  selector: 'app-cv-edit',
+  templateUrl: './cv-edit.component.html',
+  styleUrls: ['./cv-edit.component.css']
 })
-export class PersonaEditComponent implements OnInit{
+export class CVEditComponent implements OnInit{
   persona: Persona = null;
 
   constructor (private serPersona: PersonaService, private activatedRouted: ActivatedRoute,
-    public imgService: ImagenesService, private router: Router) {}
+  public archService: ArchivoService, private router: Router) {}
 
   ngOnInit(): void {
     const id = this.activatedRouted.snapshot.params['id'];
@@ -27,19 +27,19 @@ export class PersonaEditComponent implements OnInit{
 
   Editar(): void {
     const id = this.activatedRouted.snapshot.params['id'];
-    this.persona.imgPerfil = this.imgService.urlimg;
+    this.persona.curriculum = this.archService.urlarch;
     this.serPersona.update(id, this.persona).subscribe(data =>{
-      alert("Editado correctamente");
+      alert("Banner correctamente");
       this.router.navigate(['']);
     }, err => {
-      alert("Error al editar Persona");
+      alert("Error al editar banner");
       this.router.navigate(['']);
     });
   }
 
-  subirImg($event:any) {
+  subirArch($event:any) {
     const id = this.activatedRouted.snapshot.params['id'];
-    const name = "perfil_" + id;
-    this.imgService.subirImg($event, name);
+    const name = "Curriculum_" + id;
+    this.archService.subirArch($event, name);
   }
 }

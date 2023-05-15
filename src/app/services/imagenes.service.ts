@@ -5,7 +5,7 @@ import { Storage, getDownloadURL, list, ref, uploadBytes } from '@angular/fire/s
   providedIn: 'root'
 })
 export class ImagenesService {
-  url: string = "";
+  urlimg: string = '';
 
   constructor(private storage: Storage) { }
 
@@ -24,7 +24,7 @@ export class ImagenesService {
     list(imagenesRef)
     .then(async response => {
       for(let item of response.items) {
-        this.url = await getDownloadURL (item);
+        this.urlimg = await getDownloadURL (item);
       }
     })
     .catch(error => console.log(error))

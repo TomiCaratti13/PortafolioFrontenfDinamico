@@ -18,7 +18,7 @@ export class ProyectAddComponent {
   urlLive: string = '';
   urlRepo: string = '';
 
-  constructor(private serProyecto: ProyectoService, private activatedRoute: ActivatedRoute, private router: Router, public imgService: ImagenesService) {}
+  constructor(private serProyecto: ProyectoService, private activatedRoute: ActivatedRoute, private router: Router) {} //, public imgService: ImagenesService) {}
 
   ngOnInit(): void {
     
@@ -26,7 +26,7 @@ export class ProyectAddComponent {
 
   Crear(): void {
     const proy = new Proyecto(this.nombrePro, this.autorPro, this.descripcionPro, this.imgPro, this.urlLive, this.urlRepo);
-    this.imgPro = this.imgService.url;
+    //this.imgPro = this.imgService.urlimg;
     this.serProyecto.save(proy).subscribe(data => {
       alert("Educacion añadida");
       this.router.navigate(['']);
@@ -36,9 +36,9 @@ export class ProyectAddComponent {
     });
   }
 
-  subirImg($event:any) {
-    const id = this.activatedRoute.snapshot.params['id'];
-    const name = "Proyecto_" + id;
-    this.imgService.subirImg($event, name);
-  }
+  // subirImg($event:any) {
+  //   const id = this.activatedRoute.snapshot.params['id'];
+  //   const name = "Proyecto_" + id;
+  //   this.imgService.subirImg($event, name);
+  // }
 }

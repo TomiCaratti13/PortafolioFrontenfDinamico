@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Proyecto } from 'src/app/model/proyecto';
-import { ImagenesService } from 'src/app/services/imagenes.service';
+//import { ImagenesService } from 'src/app/services/imagenes.service';
 import { ProyectoService } from 'src/app/services/proyecto.service';
 
 @Component({
@@ -13,7 +13,8 @@ export class ProyectEditComponent implements OnInit{
   proy: Proyecto = null;
 
   constructor (private serProyecto: ProyectoService, private activatedRoute: ActivatedRoute,
-    private router: Router, public imgService: ImagenesService) {}
+    private router: Router) {}//, public imgService: ImagenesService) {}
+
 
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.params['id'];
@@ -27,7 +28,7 @@ export class ProyectEditComponent implements OnInit{
 
   Editar(): void {
     const id = this.activatedRoute.snapshot.params['id'];
-    this.proy.imgPro = this.imgService.url;
+    //this.proy.imgPro = this.imgService.url;
     this.serProyecto.update(id, this.proy).subscribe(data => {
       alert("Proyecto editado");
       this.router.navigate(['']);
@@ -37,9 +38,9 @@ export class ProyectEditComponent implements OnInit{
     });
   }
 
-  subirImg($event:any) {
-    const id = this.activatedRoute.snapshot.params['id'];
-    const name = "Proyecto_" + id;
-    this.imgService.subirImg($event, name);
-  }
+  // subirImg($event:any) {
+  //   const id = this.activatedRoute.snapshot.params['id'];
+  //   const name = "Proyecto_" + id;
+  //   this.imgService.subirImg($event, name);
+  // }
 }

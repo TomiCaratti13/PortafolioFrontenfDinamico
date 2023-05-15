@@ -36,6 +36,7 @@ import { environment } from '../environments/environment';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 import { EditBannerComponent } from './components/header/banner/edit-banner.component';
 import { EduEditComponent } from './components/curriculum/educacion/edu-edit/edu-edit.component';
+import { CVEditComponent } from './components/curriculum/cv-edit.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { EduEditComponent } from './components/curriculum/educacion/edu-edit/edu
     ProyectAddComponent,
     ProyectEditComponent,
     EditBannerComponent,
-    EduEditComponent
+    EduEditComponent,
+    CVEditComponent
   ],
   imports: [
     BrowserModule,

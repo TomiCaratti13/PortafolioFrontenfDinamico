@@ -31,14 +31,19 @@
                         <div *ngIf="descripcionEd.errors?.['required']" class="text-danger">
                             <p class="m-0">La descripcion es obligatoria</p>
                         </div>
-                    <div class="image-upload d-sm-flex justify-content-center mt-2 mb-2">
-                        <img [src]="imgService.url" alt="Imagen" id="img" class="mt-2 mb-2"/>
+                    <!-- <div class="image-upload d-sm-flex justify-content-center mt-2 mb-2">
+                        <img [src]="imgService.urlimg" alt="Imagen" id="img" class="mt-2 mb-2"/>
                         <div class="d-sm-flex mt-1 mb-1 mx-sm-4 labelimg text-sm-start">
                             <label for="foto">Foto
                                 <span class="btn btn-light w-100">Cambiar</span>
                             </label>
                             <input id="foto"name="foto" type="file" accept=".jpg, .png, .jpeg" [(ngModel)]="proy.imgPro" required #foto="ngModel" (change)="subirImg($event)"/>
                         </div>
+                    </div> -->
+                    <label for="imgProy" class="form-label">URL Imagen</label>
+                    <input type="text" class="form-control" [class]="{'is-invalid': imgProy.errors && (imgProy.dirty || imgProy.touched)}" id="imgProy" name="imgProy" [(ngModel)]="proy.imgPro" required #imgProy="ngModel" autocomplete="off">
+                    <div *ngIf="imgProy.errors?.['required']" class="text-danger">
+                        <p class="m-0">La URL es obligatoria</p>
                     </div>
                     <div class="modal-footer d-flex justify-content-center mt-4">
                         <button class="btn btn-primary">Aceptar <!--<i class="fa-solid fa-circle-check icon-p"></i>--></button>
