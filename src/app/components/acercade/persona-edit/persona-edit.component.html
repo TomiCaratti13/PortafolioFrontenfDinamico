@@ -16,9 +16,9 @@
                             <input id="foto" name="foto" type="file" accept=".jpg, .png, .jpeg" [(ngModel)]="persona.imgPerfil" required (change)="subirImg($event)"/>
                         </div>
                     </div>
-                    <label for="imgPerfil" class="form-label">URL Banner</label>
-                    <input type="text" class="form-control" [class]="{'is-invalid': imgPerfil.errors && (imgPerfil.dirty || imgPerfil.touched)}" id="imgPerfil" name="imgPerfil" [(ngModel)]="persona.imgPerfil" required #imgPerfil="ngModel" autocomplete="off">
-                    <div *ngIf="imgPerfil.errors?.['required']" class="text-danger">
+                    <label for="imgBaner" class="form-label">URL Banner</label>
+                    <input type="text" class="form-control" [class]="{'is-invalid': imgBaner.errors && (imgBaner.dirty || imgBaner.touched)}" id="imgBaner" name="imgBaner" [(ngModel)]="persona.imgBanner" required #imgBaner="ngModel" autocomplete="off">
+                    <div *ngIf="imgBaner.errors?.['required']" class="text-danger">
                         <p class="m-0">La URL es obligatoria</p>
                     </div>
                     <label for="nombre" class="form-label">Nombre</label>

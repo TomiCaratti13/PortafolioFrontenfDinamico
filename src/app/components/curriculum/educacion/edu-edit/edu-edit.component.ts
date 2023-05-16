@@ -21,7 +21,7 @@ export class EduEditComponent implements OnInit{
     this.serEducacion.detail(id).subscribe(data => {
       this.edu = data
     }, err => {
-      alert("Error");
+      alert("Error editor Educación");
       this.router.navigate(['']);
     });
   }
@@ -29,10 +29,10 @@ export class EduEditComponent implements OnInit{
   Editar(): void {
     const id = this.activatedRoute.snapshot.params['id'];
     this.serEducacion.update(id, this.edu).subscribe(data => {
-      alert("Educacion editada");
+      alert("Educación editada");
       this.router.navigate(['']);
     }, err => {
-      alert("Error al editar educacion");
+      alert("Error al editar Educación");
       this.router.navigate(['']);
     });
   }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Proyecto } from 'src/app/model/proyecto';
-import { ImagenesService } from 'src/app/services/imagenes.service';
+//import { ImagenesService } from 'src/app/services/imagenes.service';
 import { ProyectoService } from 'src/app/services/proyecto.service';
 
 @Component({
@@ -28,7 +28,7 @@ export class ProyectAddComponent {
     const proy = new Proyecto(this.nombrePro, this.autorPro, this.descripcionPro, this.imgPro, this.urlLive, this.urlRepo);
     //this.imgPro = this.imgService.urlimg;
     this.serProyecto.save(proy).subscribe(data => {
-      alert("Educacion añadida");
+      alert("Proyecto añadido");
       this.router.navigate(['']);
     }, err => {
       alert("Error al añadir Proyecto");

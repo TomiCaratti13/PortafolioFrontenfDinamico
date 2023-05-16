@@ -9,6 +9,9 @@
     margin: 0.2rem 0 !important;
     font-weight: 600 !important;
 }
+.text-danger p {
+    font-size: x-small;
+}
 /* .image-upload {
     width: 100%;
     border-radius: 20px;

@@ -21,7 +21,7 @@ export class ExpEditComponent implements OnInit{
     this.serExperiencia.detail(id).subscribe(data => {
       this.exp = data
     }, err => {
-      alert("Error");
+      alert("Error editor Experiencia");
       this.router.navigate(['']);
     });
   }

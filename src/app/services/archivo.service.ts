@@ -10,8 +10,8 @@ export class ArchivoService {
   constructor(private storage: Storage) { }
 
   public subirArch($event:any, name:string) {
-    if ($event.target && $event.target.archivo && typeof $event.target.archivo[0] !== 'undefined') {
-      const archivo = $event.target.archivo[0];
+    if ($event.target && $event.target.files && typeof $event.target.files[0] !== 'undefined') {
+      const archivo = $event.target.files[0];
       const archRef = ref(this.storage, `archivo/` + name);
       uploadBytes(archRef, archivo)
       .then(response => {this.getArchivo()})

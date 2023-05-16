@@ -27,7 +27,7 @@ export class ExpAddComponent implements OnInit{
       alert("Experiencia añadida");
       this.router.navigate(['']);
     }, err => {
-      alert("Falló al añadir");
+      alert("Error al añadir Experiencia");
       this.router.navigate(['']);
     });
   }

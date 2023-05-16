@@ -11,6 +11,7 @@ import { PersonaService } from 'src/app/services/persona.service';
 })
 export class CVEditComponent implements OnInit{
   persona: Persona = null;
+  ArvhivoCargado: boolean = false;
 
   constructor (private serPersona: PersonaService, private activatedRouted: ActivatedRoute,
   public archService: ArchivoService, private router: Router) {}
@@ -20,7 +21,7 @@ export class CVEditComponent implements OnInit{
     this.serPersona.detail(id).subscribe(data => {
       this.persona = data
     }, err => {
-      alert("Error");
+      alert("Error editor CV");
       this.router.navigate(['']);
     });
   }
@@ -29,10 +30,10 @@ export class CVEditComponent implements OnInit{
     const id = this.activatedRouted.snapshot.params['id'];
     this.persona.curriculum = this.archService.urlarch;
     this.serPersona.update(id, this.persona).subscribe(data =>{
-      alert("Banner correctamente");
+      alert("CV editado");
       this.router.navigate(['']);
     }, err => {
-      alert("Error al editar banner");
+      alert("Error al editar CV");
       this.router.navigate(['']);
     });
   }
@@ -41,5 +42,8 @@ export class CVEditComponent implements OnInit{
     const id = this.activatedRouted.snapshot.params['id'];
     const name = "Curriculum_" + id;
     this.archService.subirArch($event, name);
+    if(this.archService.urlarch !== undefined) {
+      this.ArvhivoCargado = true;
+    }
   }
 }

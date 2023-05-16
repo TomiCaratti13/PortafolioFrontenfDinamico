@@ -35,7 +35,7 @@ export class HabHysComponent implements OnInit{
         this.cargarHabilidad();
         alert("Habilidad eliminada");
       }, err =>{
-        alert("Error al eliminar");
+        alert("Error al eliminar Habilidad");
       });
     }
   }

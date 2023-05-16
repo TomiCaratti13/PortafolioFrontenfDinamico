@@ -2,10 +2,10 @@
     <div class="modal-dialog modal-dialog-centered add">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5 text-white">Añadir Educacion</h1>
+                <h1 class="modal-title fs-5 text-white">Añadir Proyecto</h1>
             </div>
             <div class="modal-body">
-                <form class="add-exp" #f="ngForm" (ngSubmit)="Crear()" novalidate>
+                <form class="add-edu" #f="ngForm" (ngSubmit)="Crear()" novalidate>
                     <label for="nombre" class="form-label">Nombre</label>
                     <input type="text" class="form-control" [class]="{'is-invalid': nombre.errors && (nombre.dirty || nombre.touched)}" id="nombre" name="nombre" [(ngModel)]="nombreHys" required #nombre="ngModel" autocomplete="off">
                     <div *ngIf="nombre.errors?.['required']" class="text-danger">

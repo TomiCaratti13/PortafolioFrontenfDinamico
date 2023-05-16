@@ -19,7 +19,7 @@ export class HabEditComponent implements OnInit{
       this.serHabilidad.detail(id).subscribe(data => {
         this.hab = data
       }, err => {
-        alert("Error");
+        alert("Error editor Habilidad");
         this.router.navigate(['']);
       });
     }
@@ -30,7 +30,7 @@ export class HabEditComponent implements OnInit{
         alert("Habilidad editada");
         this.router.navigate(['']);
       }, err => {
-        alert("Error al editar habilidad");
+        alert("Error al editar Habilidad");
         this.router.navigate(['']);
       });
     }

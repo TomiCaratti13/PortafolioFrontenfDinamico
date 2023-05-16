@@ -21,7 +21,7 @@ export class ProyectEditComponent implements OnInit{
     this.serProyecto.detail(id).subscribe(data => {
       this.proy = data
     }, err => {
-      alert("Error Proyecto");
+      alert("Error editor Proyecto");
       this.router.navigate(['']);
     });
   }

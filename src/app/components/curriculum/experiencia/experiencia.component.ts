@@ -36,7 +36,7 @@ export class ExperienciaComponent implements OnInit{
         this.cargarExperiencia();
         alert("Experiencia eliminada");
       }, err =>{
-        alert("Error al eliminar");
+        alert("Error al eliminar Experiencia");
       });
     }
   }

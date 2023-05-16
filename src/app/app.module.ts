@@ -34,7 +34,6 @@ import { ProyectEditComponent } from './components/proyectos/proyect-edit/proyec
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage, getStorage } from '@angular/fire/storage';
-import { EditBannerComponent } from './components/header/banner/edit-banner.component';
 import { EduEditComponent } from './components/curriculum/educacion/edu-edit/edu-edit.component';
 import { CVEditComponent } from './components/curriculum/cv-edit.component';
 
@@ -62,7 +61,6 @@ import { CVEditComponent } from './components/curriculum/cv-edit.component';
     HabHysComponent,
     ProyectAddComponent,
     ProyectEditComponent,
-    EditBannerComponent,
     EduEditComponent,
     CVEditComponent
   ],

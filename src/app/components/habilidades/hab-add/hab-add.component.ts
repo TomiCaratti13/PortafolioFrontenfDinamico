@@ -10,9 +10,9 @@ import { HabilidadService } from 'src/app/services/habilidad.service';
 })
 export class HabAddComponent implements OnInit{
 
-  nombreHys: string;
-  iconoHys: string;
-  porcentaje: number;
+  nombreHys: string = '';
+  iconoHys: string = '';
+  porcentaje: number = null;
 
   constructor (private serHabilidad: HabilidadService, private router: Router) {}
 
@@ -26,7 +26,7 @@ export class HabAddComponent implements OnInit{
       alert("Habilidad añadida");
       this.router.navigate(['']);
     }, err => {
-      alert("Error al añadir");
+      alert("Error al añadir Habilidad");
       this.router.navigate(['']);
     });
   }
